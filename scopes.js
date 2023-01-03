@@ -12,7 +12,7 @@ const printNameGlobalScope = () =>
 {
     var age = "22"; //functional Scope
     console.log(name);
-    const newFunction = () =>
+    const getAge = () =>
     {
         console.log(age);
     }
@@ -21,7 +21,7 @@ const printNameGlobalScope = () =>
         console.log(a);
     }
     // console.log(a); //This will give us an error since it is a block scope and cannot be accessed outside the block
-    newFunction();
+    getAge();
 }
 
 
