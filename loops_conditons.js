@@ -10,6 +10,7 @@ for(let a = 0;a<5;a++){
 var a = 20;
 console.log("While Loop example");
 while(a <=30){
-    console.log(a++);
+    a % 2 == 0 ? console.log(a) : console.log("Odd Number"); //condition operators using if else conditions
+    a++;
 }
 
