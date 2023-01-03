@@ -1,7 +1,7 @@
 
 
 //javascript is by defaut the single threaded synchronous language and to make it asynchronous we use the callbacks
-setTimeout(()=>
+setTimeout(()=> //this is the callback here
 {
     console.log("TimeOut Number");
 }, 5000);
