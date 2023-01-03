@@ -11,9 +11,12 @@
 
 const sampleFunction = () => // this is a non paramterarized function
 {
-    console.log("Hello world")
+    return "Hello word";
 }
 
+
+//sample function call
+console.log("Non Parameteraized function is called here ----> : ", sampleFunction());
 
 
 
