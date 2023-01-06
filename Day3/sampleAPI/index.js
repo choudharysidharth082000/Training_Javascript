@@ -1,5 +1,5 @@
 console.log("Hello world");
-const api = "https://api.sampleapis.com/coffee/hot";
+const api = "https://api.ampleapis.com/coffee/hot";
 
 const getData = fetch(api)
   .then((response) => {
@@ -7,6 +7,7 @@ const getData = fetch(api)
     return response.json();
   })
   .catch((error) => {
+    console.log("this is the test");
     console.log(error);
   })
   .then((data) => {

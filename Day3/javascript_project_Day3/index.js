@@ -16,13 +16,14 @@ mainBlock.addEventListener('animationiteration', ()=>
 //set time out that will decrease the position of the element
 setInterval(()=>{
     var birdTop = parseInt(window.getComputedStyle(bird).getPropertyValue("top"));
+    // var birdBottom = parseInt(window.getComputedStyle(bird)).getPropertyValue("bottom");
     console.log(birdTop)
-    bird.style.top = birdTop + 3 + "px";
-    // if(birdTop > 700)
-    // {
-    //     alert("Game Over");
-    //     bird.style.top = "0px";
-    // }
+    bird.style.top = birdTop + 2 + "px";
+    if(birdTop > 690)
+    {
+        alert("Game Over");
+        bird.style.top = "0px";
+    }
 },10)
 
 document.addEventListener('keyup', ()=>{

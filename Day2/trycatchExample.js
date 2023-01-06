@@ -15,6 +15,7 @@ function tryCatchFinallyExample()
     {
         console.log("Inside finally block");
     }
+    console.log("Teh sampmemf rmvnjn");
 }
 tryCatchFinallyExample();
 //output
