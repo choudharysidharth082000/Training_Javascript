@@ -1,17 +1,5 @@
 const sample = [1,2,3,4,5,1];
 
-const ararySample = [
-    {
-        "name": "Sidharth",
-        "age": "22",
-        "p;aced": true
-    },
-    {
-        "name": "Anshul",
-        "age": "22",
-        "p;aced": true
-    }
-]
 
 
 //using the reduce method
@@ -28,9 +16,28 @@ const val = sample.reduce((result, element) =>
 console.log(val);
 
 
+const ararySample = [
+    {
+        "name": "Sidharth",
+        "age": "22",
+        "p;aced": true
+    },
+    {
+        "name": "Anshul",
+        "age": "22",
+        "p;aced": true
+    }
+]
+
 //getting the names from the object for adding values to the array
 const sampleArray = ararySample.reduce((result, element)=> [...result,element.name],[]);
 console.log("Samole Array is", sampleArray);
+
+
+
+
+
+
 
 
 //getting the minimum element from the array
