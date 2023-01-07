@@ -14,6 +14,31 @@
         <h1>{{message}}</h1>
         <h1>{{test}}</h1>
         <h1>This is the test {{dataAPI[0].price}}</h1>
+        <h1>Image is {{test.image}}</h1>
+        <img ng-src={{test.image}} alt="">
+        <input type="text" ng-model="sampleName">
+        <h1>{{sampleName}}</h1>
+    </div>
+    <!-- div for checking the ng-directive attribute -->
+    <div class="test" ng-controller="ng-repeat-test">
+        <h1>{{postman}}</h1>
+        <!-- //creating the table here  -->
+        <table>
+            <thead>
+                <td>Name</td>
+                <td>Age</td>
+            </thead>
+            <tr ng-repeat="persons in sampleObject">
+                <td>{{persons.name}} and the index is {{$index}}</td>
+                <td>{{persons.age}}</td>
+            </tr>
+            <div class="containorTest" ng-repeat="persons in sampleObject">
+                <p>Hello world</p>
+                <div ng-repeat="city in persons.cities">
+                    <h1>{{city}} parent index is {{$parent.$index}} and the local index is {{$index}}</h1>
+                </div>
+            </div>
+        </table>
     </div>
 </body>
 </html>

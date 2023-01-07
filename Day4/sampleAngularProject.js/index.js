@@ -19,12 +19,55 @@ myapp.controller("mycontroller", function ($scope)
     const sample = 
     {
         "name": "Sidharth",
-        "Age": "23"
+        "Age": "22",
+        "image": "/assets/1.png"
     }
+    //need to change variable
+    var sampleName = "Anushka"
     $scope.message = "Hello world"
     $scope.test = sample
+    $scope.sampleName = sampleName
     console.log($scope);
 })
+
+
+myapp.controller("ng-repeat-test", function ($scope){
+    //sample object for getting the data    const sampleN
+    var postman = "postman Data"
+
+    const sampleObject = [
+        {
+            "name": "Sidharth",
+            "age": "22",
+            "cities": ["delhi", "Mumbai"]
+        },
+        {
+            "name": "Sidharth",
+            "age": "22",
+            "cities": ["delhi", "Mumbai"]
+        },
+        {
+            "name": "Sidharth",
+            "age": "22",
+            "cities": ["delhi", "Mumbai"]
+        },
+        {
+            "name": "Sidharth",
+            "age": "22",
+            "cities": ["delhi", "Mumbai"]
+        },
+        {
+            "name": "Anushka",
+            "age": "21",
+            "cities": ["delhi", "Mumbai"]
+        }
+    ]
+    $scope.postman = postman;
+    $scope.sampleObject = sampleObject
+})
+
+
+//controller for checking the filters
 
 
 console.log("Hello world");
