@@ -67,7 +67,51 @@ myapp.controller("ng-repeat-test", function ($scope){
 })
 
 
+
+
+//using the click directive for the controller
+
+myapp.controller("ng-click-directive-test", function($scope){
+    const sampleObject = 
+    [
+        {
+            "technology": "C++",
+            likes: 0,
+            dislikes: 0
+        },
+        {
+            "technology": "C-Sharp",
+            likes: 0,
+            dislikes: 0
+        },
+        {
+            "technology": "Javascript",
+            likes: 0,
+            dislikes: 0
+        },
+        {
+            "technology": "Python",
+            likes: 0,
+            dislikes: 0
+        }
+    ]
+
+
+    $scope.technologies = sampleObject;
+    function likes(technology){
+        technology.likes++;
+    }
+    function dislikes(technology){
+        technology.dislikes++;
+    }
+    $scope.AddLikes = likes;
+    $scope.AddDislikes = dislikes;
+})
 //controller for checking the filters
+
+myapp.controller("ng-filter-test", function ($scope){
+    //using the app
+})
 
 
 console.log("Hello world");

@@ -1,44 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sample Angular Project</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"
+      integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="index.js"></script>
-</head>
-<body ng-app = "myapp">
-    <h1>{{1+2}}</h1>        
+  </head>
+  <body ng-app="myapp">
+    <h1>{{1+2}}</h1>
     <div ng-controller="mycontroller">
-        <h1>{{message}}</h1>
-        <h1>{{test}}</h1>
-        <h1>This is the test {{dataAPI[0].price}}</h1>
-        <h1>Image is {{test.image}}</h1>
-        <img ng-src={{test.image}} alt="">
-        <input type="text" ng-model="sampleName">
-        <h1>{{sampleName}}</h1>
+      <h1>{{message}}</h1>
+      <h1>{{test}}</h1>
+      <h1>This is the test {{dataAPI[0].price}}</h1>
+      <h1>Image is {{test.image}}</h1>
+      <img ng-src="{{test.image}}" alt="" />
+      <input type="text" ng-model="sampleName" />
+      <h1>{{sampleName}}</h1>
     </div>
     <!-- div for checking the ng-directive attribute -->
     <div class="test" ng-controller="ng-repeat-test">
-        <h1>{{postman}}</h1>
-        <!-- //creating the table here  -->
+      <h1>{{postman}}</h1>
+      <!-- //creating the table here  -->
+      <table>
+        <thead>
+          <td>Name</td>
+          <td>Age</td>
+        </thead>
+        <tr ng-repeat="persons in sampleObject">
+          <td>{{persons.name}} and the index is {{$index}}</td>
+          <td>{{persons.age}}</td>
+        </tr>
+        <div class="containorTest" ng-repeat="persons in sampleObject">
+          <p>Hello world</p>
+          <div ng-repeat="city in persons.cities">
+            <h1>
+              {{city}} parent index is {{$parent.$index}} and the local index is
+              {{$index}}
+            </h1>
+          </div>
+        </div>
+      </table>
+    </div>
+    <br>
+    <br>
+    <br>
+
+
+    <!-- New Containor for Testing the click event -->
+    <div class="clickEvent" ng-controller="ng-click-directive-test">
         <table>
             <thead>
-                <td>Name</td>
-                <td>Age</td>
+                <td>Technology Name</td>
+                <td>Likes</td>
+                <td>Dislikes</td>
             </thead>
-            <tr ng-repeat="persons in sampleObject">
-                <td>{{persons.name}} and the index is {{$index}}</td>
-                <td>{{persons.age}}</td>
-            </tr>
-            <div class="containorTest" ng-repeat="persons in sampleObject">
-                <p>Hello world</p>
-                <div ng-repeat="city in persons.cities">
-                    <h1>{{city}} parent index is {{$parent.$index}} and the local index is {{$index}}</h1>
-                </div>
-            </div>
+            <tbody ng-repeat="name in technologies">
+                <td>{{name.technology}}</td>
+                <td>{{name.likes}}</td>
+                <td>{{name.dislikes}}</td>
+                <td><input type="button" ng-click="AddLikes(name)" value="Like"></td>
+                <td><input type="button" ng-click="AddDislikes(name)" value="Dislike"></td>
+            </tbody>
         </table>
     </div>
-</body>
+  </body>
 </html>
