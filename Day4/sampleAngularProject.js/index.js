@@ -72,6 +72,7 @@ myapp.controller("ng-repeat-test", function ($scope){
 //using the click directive for the controller
 
 myapp.controller("ng-click-directive-test", function($scope){
+    var sampleNumber = 1000000000;
     const sampleObject = 
     [
         {
@@ -106,11 +107,53 @@ myapp.controller("ng-click-directive-test", function($scope){
     }
     $scope.AddLikes = likes;
     $scope.AddDislikes = dislikes;
+    $scope.sampleNumber = sampleNumber;
+    $scope.stepValue =2;
 })
 //controller for checking the filters
 
 myapp.controller("ng-filter-test", function ($scope){
     //using the app
+    var number = "16";
+    var randomString = "Sidharth"
+    var dateUser = "Sun Jan 08 2023 18:33:53 GMT+0530 (India Standard Time) {}"
+    $scope.numberVal = number;
+    $scope.dateUser = dateUser;
+    $scope.randomString = randomString
+})
+
+
+//controller for testing the search text
+myapp.controller("search-control", function ($scope){
+    $scope.test = "test";
+    $scope.sampleObject = 
+    [
+        {
+            "technology": "C++",
+            city: "Delhi",
+            likes: 0,
+            dislikes: 0
+        },
+        {
+            "technology": "C-Sharp",
+            city: "Mumbai",
+            likes: 0,
+            dislikes: 0
+        },
+        {
+            "technology": "Javascript",
+            city: "Mumbai",
+            likes: 0,
+            dislikes: 0
+        },
+        {
+            "technology": "Python",
+            city: "Mumbai",
+            likes: 0,
+            dislikes: 0
+        }
+    ]
+
 })
 
 

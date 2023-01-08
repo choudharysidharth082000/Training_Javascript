@@ -55,13 +55,15 @@
 
     <!-- New Containor for Testing the click event -->
     <div class="clickEvent" ng-controller="ng-click-directive-test">
+        <h1>{{sampleNumber | number:2}}</h1>
+        Rows to Display : <input type="number" step="1" max="5" min="0" ng-model="stepValue">
         <table>
             <thead>
                 <td>Technology Name</td>
                 <td>Likes</td>
                 <td>Dislikes</td>
             </thead>
-            <tbody ng-repeat="name in technologies">
+            <tbody ng-repeat="name in technologies | limitTo:stepValue">
                 <td>{{name.technology}}</td>
                 <td>{{name.likes}}</td>
                 <td>{{name.dislikes}}</td>
@@ -70,5 +72,70 @@
             </tbody>
         </table>
     </div>
+
+
+
+
+    <!-- Container for testting simple dates -->
+    <div class="containorTest" ng-controller="ng-filter-test">
+      <h1>{{numberVal | currency}}</h1>
+      <h1>{{dateUser | date:dd/MM/YY}}</h1>
+      for Lowercase we can ues lowercase and for uppercase we can use uppercase
+      <h1>{{randomString | lowercase}}</h1>
+    </div>
+
+
+    <!-- Containor For Testing the search app  -->
+    <div class="table-containor" ng-controller="search-control">
+      Search from this search textbox <input type="text" placeholder="search" ng-model="searchText" />
+      <br><br>
+      <table>
+        <thead>
+          <td>Name</td>
+          <td>City</td>
+          <td>Likes</td>
+          <td>Dislikes</td>
+        </thead>
+        <tbody ng-repeat ="person in sampleObject | filter:searchText ">
+          <td>{{person.technology}}</td>
+          <td>{{person.city}}</td>
+          <td>{{person.likes}}</td>
+          <td>{{person.dislikes}}</td>
+        </tbody>
+      </table>  
+      <br> 
+
+    </div>
+
+
+
+    <!-- Containor Sample with exact value containor -->
+      <!-- Containor For Testing the search app  -->
+      <div class="table-containor" ng-controller="search-control">
+        Search from this search textbox <input type="text" placeholder="search" ng-model="searchText.technology" />
+        <br>
+        <br>
+        Search with the city Name <input type="text" placeholder="city" ng-model="searchText.city" />
+        <br><br>
+
+      <input type="checkbox" name="test" ng-model="exactMatch">
+      <label for="test">Enter this checkbox for exact value</label>
+        <table>
+          <thead>
+            <td>Name</td>
+            <td>City</td>
+            <td>Likes</td>
+            <td>Dislikes</td>
+          </thead>
+          <!-- Filter Takes 2 arguements First one is the search model name and second obe means wether you want to take exact value which is true or false  -->
+          <tbody ng-repeat ="person in sampleObject | filter:searchText:exactMatch">
+            <td>{{person.technology}}</td>
+            <td>{{person.city}}</td>
+            <td>{{person.likes}}</td>
+            <td>{{person.dislikes}}</td>
+          </tbody>
+        </table>   
+  
+      </div>
   </body>
 </html>
