@@ -157,4 +157,28 @@ myapp.controller("search-control", function ($scope){
 })
 
 
+
+//controller for testing the http method
+myapp.controller("httpService", function($scope, $http, $log){
+    function successCallback(data){
+        $scope.dataNew = data;
+    }
+    function errorCallBack(error){
+        $log.error(error);
+        $scope.error = error;
+    }
+    // $http.get("https://api.sampleapis.com/coffee/hot").then(data =>
+    // {
+    //     console.log(data.data);
+    //     $scope.dataNew = data.data
+        
+    // }).catch(err => console.log(err)
+    // ) 
+    $http({
+        method: 'get',
+        url: "https://api.sampleapis.com/coffee/hot"
+    }).then(successCallback, errorCallBack);
+})
+
+
 console.log("Hello world");
