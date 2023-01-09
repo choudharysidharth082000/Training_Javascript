@@ -161,7 +161,8 @@ myapp.controller("search-control", function ($scope){
 //controller for testing the http method
 myapp.controller("httpService", function($scope, $http, $log){
     function successCallback(data){
-        $scope.dataNew = data;
+        $log.info(data);
+        $scope.dataNew = data.data;
     }
     function errorCallBack(error){
         $log.error(error);
@@ -181,4 +182,11 @@ myapp.controller("httpService", function($scope, $http, $log){
 })
 
 
+myapp.controller("test-factory", function($scope, $log, Sample){
+    $scope.helperText = "Test";
+    $scope.answer = "Answer"
+    $scope.clickEvent = function clickMe(){
+        $log.info(Sample.sample($scope.helperText))
+    }
+})
 console.log("Hello world");

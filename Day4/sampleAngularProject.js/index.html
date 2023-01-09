@@ -12,6 +12,7 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="index.js"></script>
+    <script src="services/sample.js"></script>
   </head>
   <body ng-app="myapp">
     <h1>{{1+2}}</h1>
@@ -143,6 +144,18 @@
       <!-- Containor For Testing the http method gor getting the apis  -->
       <div class="containorhttp" ng-controller="httpService">
         <h1>{{dataNew}}</h1>
+      </div>
+
+
+
+      <!-- Testing the custom factory service -->
+      <div class="containorService" ng-controller="test-factory">
+        <input type="text" ng-model="helperText" placeholder="Type Something">
+        <br>
+        <h1>{{helperText}}</h1>
+        <p>Answer is : </p> <p>{{answer}}</p>
+        <br><br>
+        <input type="button" value="Click Me" ng-click="clickEvent()">
       </div>
   </body>
 </html>
