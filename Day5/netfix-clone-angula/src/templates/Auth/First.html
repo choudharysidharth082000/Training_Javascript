@@ -44,6 +44,8 @@
           type="text"
           class="w-full py-5 outline-none placeholder:p-4 input:p-4"
           placeholder="Email Address"
+          required
+          pattern=""
         />
         <button class="py-5 p-4 bg-[#E50914] text-white px-10 w-56">
           Get Started
@@ -55,9 +57,10 @@
       <div class="header w-full flex justify-start">
         <h1 class="text-white font-medium text-4xl">Sign In</h1>
       </div>
-        <input type="text" placeholder="Email or phonenumber" class=" text-white px-4 outline-none w-[300px] py-4 placeholder:px-5 mt-10 rounded-md bg-[#333333]">
-        <input type="text" placeholder="Password" class="w-[300px] outline-none px-4 text-white py-4 placeholder:px-5 mt-5 rounded-md bg-[#333333]">
-        <input type="submit" value="submit"  class="mt-8 bg-[#E50914] text-white w-[300px] py-4 rounded-md"><a >Sign In</a></input>
+        <input type="text" placeholder="Email or phonenumber" class=" text-white px-4 outline-none w-[300px] py-4 placeholder:px-5 mt-10 rounded-md bg-[#333333]" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required>
+        <!-- <p class="text-red-600 text-sm text-left w-full flex justify-start mt-1 mb-1 px-2">This is the error</p> -->
+        <input type="text" placeholder="Password" class="w-[300px] outline-none px-4 text-white py-4 placeholder:px-5 mt-5 rounded-md bg-[#333333]" pattern=".{8,}" required>
+        <input type="submit" value="Sign In"  class="mt-8 bg-[#E50914] text-white w-[300px] py-4 rounded-md"><a >Sign In</a></input>
   
       <!-- Checkboxes for forget password and need help like netflix -->
         <div class="contaninorCheckBoxes w-full flex justify-between px-3 py-2">
