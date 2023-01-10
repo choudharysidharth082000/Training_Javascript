@@ -1,0 +1,55 @@
+<div
+  class="containorMain h-screen w-full bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/7cee2527-d2cc-4cc9-99f6-d1375e72d46e/eb83fa55-ab10-476a-b103-499eb7c6e022/IN-en-20230103-popsignuptwoweeks-perspective_alpha_website_large.jpg')]"
+  ng-controller="controller_login_auth"
+>
+  <div
+    class="containorNav w-full h-[150px] bg-transparent flex justify-between px-4 items-center"
+  >
+    <div class="containorLogo">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png"
+        class="object-contain h-40 w-40"
+        alt=""
+      />
+    </div>
+    <div class="containorButtons p-3">
+      <button class="py-3 px-10 bg-[#E50914] text-white mr-4">
+        <a href="#/login">Login</a>
+      </button>
+      <button class="py-3 px-10 border border-white text-white text-white mr-4">
+        English
+      </button>
+    </div>
+  </div>
+  <div
+    class="containorShow w-full p-2 flex h-[70%] justify-center items-center"
+  >
+    <div
+      class="containor flex w-full flex-col justify-center items-center"
+      ng-controller="navbar_controller"
+    >
+      <h1 class="text-7xl text-white font-semibold text-center">
+        Unlimited movies, TV <br />
+        shows and more.
+      </h1>
+      <h1 class="text-white text-3xl align-left mt-6 text-center">
+        {{dataFrontPage.frontTagline}}
+      </h1>
+      <h1 class="text-xl text-white mt-4 text-center">
+        {{dataFrontPage.tagLine}}
+      </h1>
+      <div
+        class="containorSearchInput flex w-[40%] mt-10 p-2 justify-center items-center"
+      >
+        <input
+          type="text"
+          class="w-full py-5 outline-none placeholder:p-4 input:p-4"
+          placeholder="Email Address"
+        />
+        <button class="py-5 p-4 bg-[#E50914] text-white px-10 w-56">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
