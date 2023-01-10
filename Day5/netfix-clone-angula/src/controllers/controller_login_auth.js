@@ -1,6 +1,6 @@
 ///<reference path="../../index.js" />
 
-myapp.controller("controller_login_auth", function($scope)
+myapp.controller("controllerLogin", function($scope)
 {
     $scope.front = "Hello world"
     const dataFrontPage = {

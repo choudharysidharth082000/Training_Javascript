@@ -4,10 +4,14 @@ myapp.config(function ($routeProvider, $locationProvider) {
   $routeProvider
     .when("/", {
       templateUrl: "src/templates/Auth/First.html",
-      controller: "controller_login_auth",
+      controller: "controllerLogin",
+    })
+    .when('/sample', {
+      templateUrl: 'src/templates/Home.html',
+      controller: "controllerSample",
     })
     .otherwise({
-      redirectTo: "src/templates/404.html",
+      redirectTo: "/",
     });
   $locationProvider.html5Mode(true);
 });

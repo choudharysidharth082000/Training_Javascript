@@ -1,6 +1,6 @@
 <div
-  class="containorMain h-screen w-full bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/7cee2527-d2cc-4cc9-99f6-d1375e72d46e/eb83fa55-ab10-476a-b103-499eb7c6e022/IN-en-20230103-popsignuptwoweeks-perspective_alpha_website_large.jpg')]"
-  ng-controller="controller_login_auth"
+  class="sampleBackground h-screen w-full"
+  ng-controller="controllerLogin"
 >
   <div
     class="containorNav w-full h-[150px] bg-transparent flex justify-between px-4 items-center"
@@ -25,8 +25,7 @@
     class="containorShow w-full p-2 flex h-[70%] justify-center items-center"
   >
     <div
-      class="containor flex w-full flex-col justify-center items-center"
-      ng-controller="navbar_controller"
+      class="containor flex w-full flex-col justify-center items-center hidden"
     >
       <h1 class="text-7xl text-white font-semibold text-center">
         Unlimited movies, TV <br />
@@ -50,6 +49,30 @@
           Get Started
         </button>
       </div>
+    </div>
+    <div class="containorLogin py-16 px-16 flex flex-col justify-center items-center bg-black rounded-lg">
+      <div class="header w-full flex justify-start">
+        <h1 class="text-white font-medium text-4xl">Sign In</h1>
+      </div>
+      <input type="text" placeholder="Email or phonenumber" class="w-[300px] py-4 placeholder:px-5 mt-10 rounded-md bg-[#333333]">
+      <input type="text" placeholder="Password" class="w-[300px] py-4 placeholder:px-5 mt-5 rounded-md bg-[#333333]">
+      <button class="mt-8 bg-[#E50914] text-white w-[300px] py-4 rounded-md">Sign In</button>
+      <!-- Checkboxes for forget password and need help like netflix -->
+        <div class="contaninorCheckBoxes w-full flex justify-between px-3 py-2">
+          <div class="checkbox">
+            <input type="checkbox" id="rememberMe" name="rememberMe" value="rememberMe">
+            <label for="rememberMe" class="text-gray-300">Remember me</label>
+          </div>
+          <div class="checkbox">
+            <a href="#" class="text-gray-300">Need help?</a>
+        </div>
+    </div>
+    <div class="containorSpace w-full py-8 bg-black"></div>
+    <div class="containorCheck flex p-3 flex flex-start w-full">
+      <h1 class="text-gray-400 text-left text-lg">New to Netflix?<span class="text-white text-lg">Signup up Now</span></h1>
+    </div>
+    <div class="containorText w-full p-2 w-[300px]">
+      <h1 class="text-gray-500 text-sm"> This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</h1>
     </div>
   </div>
 </div>
