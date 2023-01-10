@@ -50,13 +50,15 @@
         </button>
       </div>
     </div>
+    <form ng-submit="register()">
     <div class="containorLogin py-16 px-16 flex flex-col justify-center items-center bg-black rounded-lg">
       <div class="header w-full flex justify-start">
         <h1 class="text-white font-medium text-4xl">Sign In</h1>
       </div>
-      <input type="text" placeholder="Email or phonenumber" class="w-[300px] py-4 placeholder:px-5 mt-10 rounded-md bg-[#333333]">
-      <input type="text" placeholder="Password" class="w-[300px] py-4 placeholder:px-5 mt-5 rounded-md bg-[#333333]">
-      <button class="mt-8 bg-[#E50914] text-white w-[300px] py-4 rounded-md">Sign In</button>
+        <input type="text" placeholder="Email or phonenumber" class=" text-white px-4 outline-none w-[300px] py-4 placeholder:px-5 mt-10 rounded-md bg-[#333333]">
+        <input type="text" placeholder="Password" class="w-[300px] outline-none px-4 text-white py-4 placeholder:px-5 mt-5 rounded-md bg-[#333333]">
+        <input type="submit" value="submit"  class="mt-8 bg-[#E50914] text-white w-[300px] py-4 rounded-md"><a >Sign In</a></input>
+  
       <!-- Checkboxes for forget password and need help like netflix -->
         <div class="contaninorCheckBoxes w-full flex justify-between px-3 py-2">
           <div class="checkbox">
@@ -67,6 +69,7 @@
             <a href="#" class="text-gray-300">Need help?</a>
         </div>
     </div>
+  </form>
     <div class="containorSpace w-full py-8 bg-black"></div>
     <div class="containorCheck flex p-3 flex flex-start w-full">
       <h1 class="text-gray-400 text-left text-lg">New to Netflix?<span class="text-white text-lg">Signup up Now</span></h1>

@@ -1,6 +1,6 @@
 ///<reference path="../../index.js" />
 
-myapp.controller("controllerLogin", function($scope)
+myapp.controller("controllerLogin",["$scope", "$location", "$log", function($scope, $location, $log)
 {
     $scope.front = "Hello world"
     const dataFrontPage = {
@@ -9,4 +9,8 @@ myapp.controller("controllerLogin", function($scope)
           "Ready to watch? Enter your email to create or restart your membership.",
       };
       $scope.dataFrontPage = dataFrontPage;
-})
+
+      $scope.register = function() {
+        $location.path('/welcome');
+      }
+}])

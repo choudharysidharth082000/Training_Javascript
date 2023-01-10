@@ -6,7 +6,7 @@ myapp.config(function ($routeProvider, $locationProvider) {
       templateUrl: "src/templates/Auth/First.html",
       controller: "controllerLogin",
     })
-    .when('/sample', {
+    .when('/welcome', {
       templateUrl: 'src/templates/Home.html',
       controller: "controllerSample",
     })

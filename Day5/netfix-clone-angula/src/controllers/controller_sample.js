@@ -1,5 +1,5 @@
 ///<reference path="../../index.js" />
 
-myapp.controller("controllerSample", function ($scope){
+myapp.controller("controllerWelcome", function ($scope){
     $scope.header = "HEllo world"
 })
