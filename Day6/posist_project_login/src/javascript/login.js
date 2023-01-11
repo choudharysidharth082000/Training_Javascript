@@ -9,7 +9,6 @@ const passwordRegex = ".{8,}";
 const usernameRegex = "^[a-zA-Z0-9+_.-]+$";
 const phoneRegex = "^[0-9]{10}$";
 
-
 var emailVal, passwordVal;
 const findUser = (username) => {
   const users = JSON.parse(window.localStorage.getItem("users"));
