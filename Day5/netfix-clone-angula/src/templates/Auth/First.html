@@ -57,7 +57,7 @@
       <div class="header w-full flex justify-start">
         <h1 class="text-white font-medium text-4xl">Sign In</h1>
       </div>
-        <input type="text" name="email" placeholder="Email or phonenumber" ng-model="email" class="text-white px-4 outline-none w-[300px] py-4 placeholder:px-5 mt-10 rounded-md bg-[#333333]" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required>
+        <input type="text" name="email" placeholder="Email or phonenumber" ng-model="email" class="text-white px-4 outline-none w-[300px] py-4 placeholder:px-5 mt-10 rounded-md bg-[#333333]" pattern="  " required>
         <p ng-show="loginForm.email.$dirty && loginForm.email.$invalid" class="text-red-600 text-sm text-left w-full flex justify-start mt-1 mb-1 px-2">Please Enter a valid Email!</p>
         <input type="password" placeholder="Password" ng-model="password" name="password" class="w-[300px] outline-none px-4 text-white py-4 placeholder:px-5 mt-5 rounded-md bg-[#333333]" pattern=".{8,}" required>
         <p ng-show="loginForm.password.$dirty && loginForm.password.$invalid" class="text-red-600 text-sm text-left w-full flex justify-start mt-1 mb-1 px-2">Password must be 8 characters long</p>
