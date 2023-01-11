@@ -51,6 +51,13 @@
     /* background-color: red; */
     object-fit: contain;
 }
+.notification{
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    cursor: pointer;
+
+}
 .outline-none 
 {
     border: none;

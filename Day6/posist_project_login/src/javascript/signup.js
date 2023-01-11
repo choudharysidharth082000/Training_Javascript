@@ -67,7 +67,7 @@ email.addEventListener("input", (e) => {
   } else {
     email.style.border = "2px solid #E50914";
     errorUsername.style.display = "block";
-    errorUsername.innerHTML = "Please enter a valid email";
+    errorUsername.innerHTML = "Please enter a valid email or username";
   }
 });
 username.addEventListener("input", (e) => {
@@ -117,5 +117,14 @@ confirmPassword.addEventListener("input", (e) => {
     confirmPassword.style.border = "2px solid #E50914";
     errorUsername.style.display = "block";
     errorUsername.innerHTML = "Password does not match";
+  }
+});
+
+
+//going to the main page if there is token
+//checking for the token
+window.addEventListener("load", (e) => {
+  if (window.localStorage.getItem("token")) {
+    window.location.href = "/src/pages/home.html";
   }
 });

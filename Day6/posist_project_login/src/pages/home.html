@@ -5,9 +5,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/home.css">
     <script defer src="/src/javascript/home.js"></script>
 </head>
 <body>
-    Hello world
+    <!-- Hello world
+    <button id="logout">Log Out</button> -->
+    <div class="containorHome w-full screen-height bg-black">
+        <div class="containorBackdrop position-relative w-full heightBackDrop">
+            <!-- Navbar  -->
+            <div class="navbar w-full p-3 d-flex justify-content-between">
+                <div class="logo">
+                    <img class="image-logo-netflix" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="">
+                </div>
+                <div class="navbar-right d-flex">
+                    <div class="navbar-right-item">
+                        <img id="logout" src="../../public/images/Netflix-avatar.png" class="notification" alt="notifications">
+                    </div>
+                </div>
+            </div>    
+            <!-- End Navbar -->
+            <div class="containorHeaderFull p-lg-5 py-4 d-flex justify-content-start">
+                <div class="containorHeader p-3">
+                    <h1 class="text-white font-weight-bold mb-3">The Last Kingdom</h1>
+                    <button class="bannerButton">Play</button>
+                    <button class="bannerButton mb-2">My List</button>
+                    <p class="text-white">A show of heroic deeds and epic battles with a thematic depth <br> that embraces politics, religion, warfare, courage, <br> love, loyalty and our universal sea ...
+                    </p>
+                </div>                
+            </div>
+                                        
+        </div>
+    </div>
 </body>
 </html>
