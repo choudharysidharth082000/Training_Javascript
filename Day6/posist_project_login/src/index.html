@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login And Signup</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</head>
+<body>
+ <div class="containorMain min-w-100 screen-height bg-dark flex-column">
+    <div class="navbar d-flex justify-content-between px-5 py-4">
+        <div class="logo">
+            <img class="image-logo-netflix" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="">
+        </div>
+        <div class="buttons d-flex justify-center p-4">
+            <button class="py-3 px-5 mainColorbg text-white shadow-none outline-none mx-4 ">Login</button>
+            <button class="py-3 px-5 border border-white bg-transparent text-white">English</button>
+        </div>
+    </div>
+
+    <!-- Containor For the Signup and the login -->
+    <div class="containorSignup">
+        <form action="" name="Signup">
+            <div class="contatainorMain p-5 h-100 d-flex justify-content-center align-items-center">
+                <div class="blackBox h-75 w-25 bg-black px-lg-5 py-lg-5 rounded-lg flex-column">
+                    <h1 class="text-white font-weight-bold">Sign In</h1>     
+                    <input class="input w-100 mt-4 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Email or phonenumber" name="email" id="email" required>               
+                    <input class="input w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Password" name="password" id="password" required>               
+                    <!-- Checkbox for forget password and need help -->
+                    <div class="d-flex justify-content-between mt-3 p-2">
+                        <div class="checkbox">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember" class="inputPlaceholderColor">Remember me</label>
+                        </div>
+                        <div class="needHelp">
+                            <a href="#" class="inputPlaceholderColor">Need help?</a>
+                        </div>
+                    
+                </div>
+                <!-- Button for Signup -->
+                <button type="submit" onclick="signup(e)" class="mainColor w-100 py-3 mainColorbg text-white outline-none rounded-sm mt-2">Sign In</button>
+                <div class="containorFreeSpace w-100 py-lg-4"></div>
+                <div class="containorNewLogin w-100 p-2">
+                    <p class="gray text-lg-left p-2">New to Netflix?<span class="text-white text-lg-left"><a class="text-white" href="#">Sign up Now</a></span></p>
+                    <p class="gray p-2 text-sm">This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</p>
+                </div>
+    
+            </div>
+        </form>
+    </div>
+ </div>
+</body>
+</html>
