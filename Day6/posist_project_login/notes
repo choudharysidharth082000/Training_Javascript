@@ -1,0 +1,4 @@
+Cookies should be used where the data will explire at some time 
+If needed for server and client use cookies
+
+local storage is used when it is verylarge data 

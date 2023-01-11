@@ -38,7 +38,7 @@ formUser.addEventListener("submit", (e) => {
   //going to the home route
   //   window.location.href = "/src/pages/home.html";
   alert("Login Success");
-  window.location.href = "/src/pages/login.html";
+  window.location.href = "/src/pages/home.html";
 });
 
 //finding the user

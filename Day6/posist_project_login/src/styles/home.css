@@ -6,6 +6,8 @@
     background-size: cover;
     background-image: url(https://image.tmdb.org/t/p/original//uCqXSfHymdbDMsFx8t0u0OPSuve.jpg);
     background-position: center;
+    background-position-x: center;
+    background-position-y: center;
     object-fit: contain;
 }
 .heightBackDrop{
