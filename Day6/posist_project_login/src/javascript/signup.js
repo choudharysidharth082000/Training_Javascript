@@ -1,4 +1,5 @@
 console.log("Hello world");
+alert("Width Supported for now is 1800px");
 
 const email = document.getElementById("email");
 const username = document.getElementById("username");
@@ -27,7 +28,7 @@ formUser.addEventListener("submit", (e) => {
     email: emailVal,
     password: passwordVal,
     username: usernameVal,
-    phoneNumber: phone.value
+    phoneNumber: phone.value,
   };
   if (window.localStorage.getItem("users") != null) {
     const users = JSON.parse(window.localStorage.getItem("users"));
@@ -45,6 +46,9 @@ formUser.addEventListener("submit", (e) => {
 //finding the user
 const findUser = (username) => {
   const users = JSON.parse(window.localStorage.getItem("users"));
+  if(users == null){
+    return;
+  }
   const user = users.find((user) => user.username == username);
   if (user) {
     return true;
@@ -57,6 +61,8 @@ const findUser = (username) => {
 const validateInput = (val, regex) => {
   return val.match(regex);
 };
+
+
 //using the event listener for checking the input
 email.addEventListener("input", (e) => {
   if (
@@ -73,12 +79,17 @@ email.addEventListener("input", (e) => {
 });
 //username validations
 username.addEventListener("input", (e) => {
-  if(findUser(username.value)){
-    console.log("Username already present")
-      username.style.border = `2px solid red`
-      errorUsername.style.display = "block";
-      errorUsername.innerHTML = "Username already exists";
-    }
+  if (findUser(username.value)) {
+    console.log("Username already present", errorUsername);
+    alert("UserName Already Exists")
+    // username.style.border = "2px solid #E50914";
+    errorUsername.style.display = "block";
+    errorUsername.innerHTML = "Username already exists";
+  }
+  // else {
+  //   username.style.border = "none";
+  //   errorUsername.style.display = "none";
+  // }
   if (validateInput(username.value, usernameRegex)) {
     username.style.border = "none";
     errorUsername.style.display = "none";
@@ -93,35 +104,33 @@ console.log(password);
 //password event listener
 password.addEventListener("input", (e) => {
   console.log("Hello world");
-  if(password.value.length === 0){
+  if (password.value.length === 0) {
     errorPassword.style.display = "none";
-  }
-  else {
+  } else {
     errorPassword.style.display = "block";
   }
-  const tests = 
-  [
+  const tests = [
     {
       length: ".{8,}",
       id: "length",
-      error_message: "Length Should be Atleast 10 characters long"
+      error_message: "Length Should be Atleast 10 characters long",
     },
     {
       length: "[A-Z]+",
       id: "uppercase",
-      error_message: "Should contain atleast one uppercase letter"
+      error_message: "Should contain atleast one uppercase letter",
     },
     {
       length: "[a-z]+",
       id: "lowercase",
-      error_message: "Should contain atleast one lowercase letter"
+      error_message: "Should contain atleast one lowercase letter",
     },
     {
       length: "[0-9]{2,}",
       id: "number",
-      error_message: "Should contain atleast two numbers"
-    }
-  ]
+      error_message: "Should contain atleast two numbers",
+    },
+  ];
   //for every input checking every regex
   tests.forEach((test) => {
     const element = document.getElementById(test.id);
@@ -130,8 +139,7 @@ password.addEventListener("input", (e) => {
     } else {
       element.style.color = "#E50914";
     }
-  }
-  );
+  });
 });
 
 //phone number validations
@@ -157,7 +165,6 @@ confirmPassword.addEventListener("input", (e) => {
     errorUsername.innerHTML = "Password does not match";
   }
 });
-
 
 //going to the main page if there is token
 //checking for the token

@@ -23,3 +23,40 @@
     background-color: rgba(51,51,51,.5);
     padding: 0.5rem 2rem
 }
+.widthShows{
+    width: 166px;
+    height: 250px;
+    object-fit: contain;
+}
+.containorShows{
+    overflow-x: scroll;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 28px;
+}
+.containorShows::-webkit-scrollbar {
+    display: none;
+  }
+.containorPoster{
+    max-height: 240px;
+    object-fit: contain;
+    margin-right: 5px;
+    cursor: pointer;
+    /* transition: -webkit-transform .45s;
+    transition: transform .45s;
+    transition: transform .45s,-webkit-transform .45s; */
+    transition: 1s ease;
+}
+.containorPoster img{
+    width: 200px;
+    height: 270px;
+    object-fit: contain;
+}
+.max-height-poster{
+    max-height: 300px;
+}
+
+.containorPoster:hover{
+    scale: 1.1;
+}
