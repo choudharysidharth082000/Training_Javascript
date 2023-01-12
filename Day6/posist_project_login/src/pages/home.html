@@ -21,11 +21,13 @@
       integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/home.css" />
     <script defer src="/src/javascript/home.js"></script>
   </head>
-  <body class="position-relative">
+  <body class="main position-relative">
     <!-- Loader Containor -->
     <!-- Hello world
     <button id="logout">Log Out</button> -->
@@ -34,8 +36,10 @@
         class="containorBackdrop position-relative w-full heightBackDrop"
         id="containorBackdrop"
       >
+
+      <script src="/src/components/Navbar.js"></script>
         <!-- Navbar  -->
-        <div class="navbar w-full p-3 d-flex justify-content-between">
+        <!-- <div class="navbar w-full p-3 d-flex justify-content-between">
           <div class="logo">
             <img
               class="image-logo-netflix"
@@ -53,8 +57,31 @@
               />
             </div>
           </div>
-        </div>
+        </div> -->
         <!-- End Navbar -->
+
+         <div id="sidebar" class="sidebar d-flex flex-column">
+              <div class="containorHeaderClose w-100 p-4 d-flex px-3 justify-content-end">
+            
+                <div class="closeIcon">
+                  <i id="iconClose" class="fas fa-times text-white"></i>
+                  </div>
+              </div>
+            <div class="containorEditProfile w-100 p-3">
+              <h1 class="text-white p-3 font-weight-bold">Edit Profile</h1>
+              <div class="containorTwo d-flex">
+                <div class="containorIcon">
+                  <img class="avatar" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="">
+                </div>
+                <div class="containorData w-75 p-1">
+                  <div class="containorUserEmail p-2 d-flex justify-content-center align-items-center">
+                    <p>choudharysidharth082000@gmail.com</p>
+                  </div>
+                  <button class="w-full p-2 text-white outline-none mainColorbg">Sign Out</button>
+                </div>
+              </div>
+            </div>
+        </div>
         <div
           class="containorHeaderFull p-lg-5 py-4 d-flex justify-content-start"
           id="containorHeaderFull"
@@ -65,7 +92,7 @@
             </h1>
             <button class="bannerButton">Play</button>
             <button class="bannerButton mb-2">My List</button>
-            <p class="text-white w-50" id="bannerDiscription">
+            <p class="text-white w-25" id="bannerDiscription">
               A show of heroic deeds and epic battles with a thematic depth that
               embraces politics, religion, warfare, courage, love, loyalty and
               our universal sea ...

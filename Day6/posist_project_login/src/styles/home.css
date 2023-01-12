@@ -10,7 +10,9 @@
     background-position-y: center;
     object-fit: contain;
 }
-
+.main{
+    transition: 1s ease;
+}
 
 .netflix {
     height: 434.44px;
@@ -64,4 +66,28 @@
 
 .containorPoster:hover{
     scale: 1.1;
+}
+
+.sidebar{
+    position: fixed;
+    width: 0;
+    height: 100vh;
+    background-color: black;
+    right: 0;
+    top: 0;
+}
+i{
+    color: #fff;
+    margin: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+}
+
+.containorUserEmail{
+    background-color: #808080;
+    color: white;
 }

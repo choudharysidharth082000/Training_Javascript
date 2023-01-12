@@ -6,13 +6,22 @@ const bannerHeader = document.getElementById("headerWelcome");
 const bannerDescription = document.getElementById("bannerDiscription");
 const containorShows = document.getElementById("containorShows");
 const containorShowsAction = document.getElementById("containorShowsAction");
+const sidebar = document.getElementById("sidebar");
+const close = document.getElementById("iconClose");
 console.log(bannerHeader);
 
 logoutButton.addEventListener("click", (e) => {
   e.preventDefault();
-  window.localStorage.removeItem("token");
-  window.location.href = "/src/pages/login.html";
+  sidebar.style.width = "575px"
+//   window.localStorage.removeItem("token");
+//   window.location.href = "/src/pages/login.html";
 });
+iconClose.addEventListener('click', (e)=>
+{
+    e.preventDefault();
+    console.log("Hello world");
+    sidebar.style.width = "0px"
+})
 
 //string truncate method
 const truncate = (string, n) => {
