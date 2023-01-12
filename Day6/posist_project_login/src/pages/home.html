@@ -25,11 +25,15 @@
     <link rel="stylesheet" href="../styles/home.css" />
     <script defer src="/src/javascript/home.js"></script>
   </head>
-  <body>
+  <body class="position-relative">
+    <!-- Loader Containor -->
     <!-- Hello world
     <button id="logout">Log Out</button> -->
     <div class="containorHome w-full screen-height bg-black">
-      <div class="containorBackdrop position-relative w-full heightBackDrop" id="containorBackdrop">
+      <div
+        class="containorBackdrop position-relative w-full heightBackDrop"
+        id="containorBackdrop"
+      >
         <!-- Navbar  -->
         <div class="navbar w-full p-3 d-flex justify-content-between">
           <div class="logo">
@@ -56,25 +60,29 @@
           id="containorHeaderFull"
         >
           <div class="containorHeader p-3">
-            <h1 class="text-white font-weight-bold mb-3" id="headerWelcome">The Last Kingdom</h1>
+            <h1 class="text-white font-weight-bold mb-3" id="headerWelcome">
+              The Last Kingdom
+            </h1>
             <button class="bannerButton">Play</button>
             <button class="bannerButton mb-2">My List</button>
             <p class="text-white w-50" id="bannerDiscription">
-              A show of heroic deeds and epic battles with a thematic depth
-              that embraces politics, religion, warfare, courage,
-              love, loyalty and our universal sea ...
+              A show of heroic deeds and epic battles with a thematic depth that
+              embraces politics, religion, warfare, courage, love, loyalty and
+              our universal sea ...
             </p>
           </div>
         </div>
         <!-- <div class="containorFullFade bottom-0 p-3"></div> -->
       </div>
-      <div class="containorNetflixOriginals w-full p-3 px-4 mt-lg-5 d-flex flex-column justify-content-around">
-        <h1 class="text-white font-weight-bold">Netflix Originals</h1>        
+      <div
+        class="containorNetflixOriginals w-full p-3 px-4 mt-lg-5 d-flex flex-column justify-content-around"
+      >
+        <h1 class="text-white font-weight-bold">Netflix Originals</h1>
         <div id="containorShows" class="containorShows w-full p-3">
           <!-- Images will be dynamically injected  -->
         </div>
 
-        <h1 class="text-white font-weight-bold mt-4">Discover</h1>        
+        <h1 class="text-white font-weight-bold mt-4">Discover</h1>
         <div id="containorShowsAction" class="containorShows w-full p-3 mb-1">
           <!-- Images will be dynamically injected  -->
         </div>

@@ -20,6 +20,7 @@ const truncate = (string, n) => {
 };
 
 window.addEventListener("load", (event) => {
+    console.log("Loader Started");
   if (
     window.location.pathname == "/src/pages/home.html" &&
     window.localStorage.getItem("token") == null
@@ -53,6 +54,7 @@ window.addEventListener("load", (event) => {
             <img src="https://image.tmdb.org/t/p/original${movie.poster_path}" class="card-img-top" alt="...">
             `;
         containorShows.appendChild(card);
+        console.log("loader Terned Off");
       });
     })
     .catch((err) => {

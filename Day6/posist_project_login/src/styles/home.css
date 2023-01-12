@@ -10,6 +10,11 @@
     background-position-y: center;
     object-fit: contain;
 }
+
+
+.netflix {
+    height: 434.44px;
+}
 .heightBackDrop{
     height: 500px;
 }

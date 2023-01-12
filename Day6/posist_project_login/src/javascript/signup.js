@@ -46,7 +46,7 @@ formUser.addEventListener("submit", (e) => {
 //finding the user
 const findUser = (username) => {
   const users = JSON.parse(window.localStorage.getItem("users"));
-  if(users == null){
+  if (users == null) {
     return;
   }
   const user = users.find((user) => user.username == username);
@@ -61,7 +61,6 @@ const findUser = (username) => {
 const validateInput = (val, regex) => {
   return val.match(regex);
 };
-
 
 //using the event listener for checking the input
 email.addEventListener("input", (e) => {
@@ -81,7 +80,7 @@ email.addEventListener("input", (e) => {
 username.addEventListener("input", (e) => {
   if (findUser(username.value)) {
     console.log("Username already present", errorUsername);
-    alert("UserName Already Exists")
+    alert("UserName Already Exists");
     // username.style.border = "2px solid #E50914";
     errorUsername.style.display = "block";
     errorUsername.innerHTML = "Username already exists";
