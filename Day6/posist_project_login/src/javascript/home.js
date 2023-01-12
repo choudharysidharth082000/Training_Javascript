@@ -6,6 +6,7 @@ const bannerHeader = document.getElementById("headerWelcome");
 const bannerDescription = document.getElementById("bannerDiscription");
 const containorShows = document.getElementById("containorShows");
 const containorShowsAction = document.getElementById("containorShowsAction");
+const logout1= document.getElementById("logout1");
 const sidebar = document.getElementById("sidebar");
 const close = document.getElementById("iconClose");
 console.log(bannerHeader);
@@ -15,6 +16,11 @@ logoutButton.addEventListener("click", (e) => {
   sidebar.style.width = "575px"
 //   window.localStorage.removeItem("token");
 //   window.location.href = "/src/pages/login.html";
+});
+logout1.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.localStorage.removeItem("token");
+  window.location.href = "/src/pages/login.html";
 });
 iconClose.addEventListener('click', (e)=>
 {
@@ -52,7 +58,7 @@ window.addEventListener("load", (event) => {
       banner.style.backgroundImage = `url(https://image.tmdb.org/t/p/original${data.results[randomNumber].backdrop_path})`;
       //changing the content in the benner Header
       bannerHeader.innerHTML = data.results[randomNumber].title;
-      bannerDescription.innerHTML = data.results[randomNumber].overview;
+      bannerDescription.innerHTML = truncate(data.results[randomNumber].overview , 150);
 
       //creating the cards
       data.results.forEach((movie) => {

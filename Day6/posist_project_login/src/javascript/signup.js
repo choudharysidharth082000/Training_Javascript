@@ -1,5 +1,5 @@
 console.log("Hello world");
-alert("Width Supported for now is 1800px");
+// alert("Width Supported for now is 1800px");
 
 const email = document.getElementById("email");
 const username = document.getElementById("username");
@@ -134,7 +134,7 @@ password.addEventListener("input", (e) => {
   tests.forEach((test) => {
     const element = document.getElementById(test.id);
     if (password.value.match(test.length)) {
-      element.style.color = "green";
+      element.classList.add("text-success");
     } else {
       element.style.color = "#E50914";
     }
