@@ -8,6 +8,7 @@ const formUser = document.getElementById("namesignup");
 const errorUsername = document.getElementById("errorUsername");
 const confirmPassword = document.getElementById("cpassword");
 const phone = document.getElementById("phone");
+const errorPassword = document.getElementById("passwordValidate");
 const emailRegex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
 const passwordRegex = ".{8,}";
 const usernameRegex = "^[a-zA-Z0-9+_.-]+$";
@@ -51,7 +52,7 @@ const findUser = (username) => {
     return false;
   }
 };
-console.log(findUser("cjnvjrenjjken"));
+// console.log(findUser("cjnvjrenjjken"));
 
 const validateInput = (val, regex) => {
   return val.match(regex);
@@ -70,10 +71,14 @@ email.addEventListener("input", (e) => {
     errorUsername.innerHTML = "Please enter a valid email or username";
   }
 });
+//username validations
 username.addEventListener("input", (e) => {
-  // if(findUser(username)){
-  //     username.style.border = `2px solid red`
-  //   }
+  if(findUser(username.value)){
+    console.log("Username already present")
+      username.style.border = `2px solid red`
+      errorUsername.style.display = "block";
+      errorUsername.innerHTML = "Username already exists";
+    }
   if (validateInput(username.value, usernameRegex)) {
     username.style.border = "none";
     errorUsername.style.display = "none";
@@ -84,16 +89,49 @@ username.addEventListener("input", (e) => {
   }
 });
 
+console.log(password);
 //password event listener
 password.addEventListener("input", (e) => {
-  if (validateInput(password.value, passwordRegex)) {
-    password.style.border = "none";
-    errorUsername.style.display = "none";
-  } else {
-    password.style.border = "2px solid #E50914";
-    errorUsername.style.display = "block";
-    errorUsername.innerHTML = "Password must be 8 characters long";
+  console.log("Hello world");
+  if(password.value.length === 0){
+    errorPassword.style.display = "none";
   }
+  else {
+    errorPassword.style.display = "block";
+  }
+  const tests = 
+  [
+    {
+      length: ".{8,}",
+      id: "length",
+      error_message: "Length Should be Atleast 10 characters long"
+    },
+    {
+      length: "[A-Z]+",
+      id: "uppercase",
+      error_message: "Should contain atleast one uppercase letter"
+    },
+    {
+      length: "[a-z]+",
+      id: "lowercase",
+      error_message: "Should contain atleast one lowercase letter"
+    },
+    {
+      length: "[0-9]{2,}",
+      id: "number",
+      error_message: "Should contain atleast two numbers"
+    }
+  ]
+  //for every input checking every regex
+  tests.forEach((test) => {
+    const element = document.getElementById(test.id);
+    if (password.value.match(test.length)) {
+      element.style.color = "green";
+    } else {
+      element.style.color = "#E50914";
+    }
+  }
+  );
 });
 
 //phone number validations

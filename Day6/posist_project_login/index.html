@@ -37,6 +37,12 @@
                     <input class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Password" name="password" id="password" pattern=".{8,}" required>   
                     <input class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" pattern=".{8,}" required>               
                     <p id="errorUsername" class="mainColor p-1 mt-1 mb-1" style="display:none;">User With this username already exists</p> 
+                    <div class="containorPasswordValidationBlock mt-2 p-3" style="display: none;" id="passwordValidate">
+                        <p id="length" class="mt-1">Length Should be Atleast 10 characters long</p>
+                        <p id="uppercase" class="mt-1">Should contain atleast one uppercase letter</p>
+                        <p id="lowercase" class="mt-1">Should contain atleast one lowercase letter</p>
+                        <p id="number" class="mt-1">Should contain atleast two numbers</p>   
+                    </div>
                     <!-- Checkbox for forget password and need help -->
                     <div class="d-flex justify-content-between mt-3 p-2">
                         <div class="checkbox">
