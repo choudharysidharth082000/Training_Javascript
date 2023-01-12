@@ -75,7 +75,7 @@ username.addEventListener("input", (e) => {
   //     username.style.border = `2px solid red`
   //   }
   if (validateInput(username.value, usernameRegex)) {
-    email.style.border = "none";
+    username.style.border = "none";
     errorUsername.style.display = "none";
   } else {
     username.style.border = "2px solid #E50914";
