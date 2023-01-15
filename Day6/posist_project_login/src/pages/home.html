@@ -29,45 +29,28 @@
     <link rel="stylesheet" href="../styles/global.css" />
     <link rel="stylesheet" href="../styles/home.css" />
     <script defer src="/src/javascript/home.js"></script>
+    <script src="/src/javascript/sidebarComponent.js"></script>
   </head>
   <body class="main position-relative">
     <!-- Loader Containor -->
     <!-- Hello world
     <button id="logout">Log Out</button> -->
-    <div class="containorHome w-full screen-height bg-black">
+    <div class="containorHome w-full bg-black">
       <div
         class="containorBackdrop position-relative w-full heightBackDrop"
         id="containorBackdrop"
       >
+        <!-- Replaced the Below code with the navar Component -->
         <script src="/src/components/Navbar.js"></script>
-        <!-- Navbar  -->
-        <!-- <div class="navbar w-full p-3 d-flex justify-content-between">
-          <div class="logo">
-            <img
-              class="image-logo-netflix"
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png"
-              alt=""
-            />
-          </div>
-          <div class="navbar-right d-flex">
-            <div class="navbar-right-item">
-              <img
-                id="logout"
-                src="../../public/images/Netflix-avatar.png"
-                class="notification"
-                alt="notifications"
-              />
-            </div>
-          </div>
-        </div> -->
-        <!-- End Navbar -->
+        <!-- End  -->
 
-        <div id="sidebar" class="sidebar d-flex flex-column">
+        <div id="sidebar" class="sidebar" style="display: none;">
           <div
-            class="containorHeaderClose w-100 p-4 d-flex px-3 justify-content-end"
+            class="containorHeaderClose border-right w-full p-4 d-flex px-3 justify-content-end"
           >
             <div class="closeIcon">
               <i id="iconClose" class="fas fa-times text-white"></i>
+              <!-- Disbaled Button -->
             </div>
           </div>
           <div class="containorEditProfile w-100 p-3">
@@ -75,29 +58,44 @@
             <div class="containorTwo d-flex">
               <div class="containorIcon w-25">
                 <img
+    
                   class="avatar"
                   src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                   alt=""
                 />
               </div>
               <div class="containorData w-75 p-1 d-flex flex-column">
-                <div
-                  class="containorUserEmail p-2 d-flex justify-content-between"
-                >
-                  <p>choudharysidharth082000@gmail.com</p>
+                <div class="containorUserEmail w-full p-2 d-flex justify-content-center align-items-center">
+                  <h5 id="emailUser" class="text-white
+                  font-weight-bold">User Name</h5>
+
                 </div>
-                <button id="logout1" class="w-full p-2 text-white outline-none mainColorbg">
+                <button
+                  id="logout1"
+                  class="w-full p-2 text-white outline-none mainColorbg"
+                >
                   Sign Out
                 </button>
               </div>
             </div>
+            <button id="editProfileMain" class="w-100 border border-white rounded-sm py-2 mt-5  text-white bg-transparent">Edit Profile</button>
+
+            <form action="" id="editProfile" class="w-100 p-3 mt-5" style="display: none;">
+              <!-- <h4 class="text-white">Edit Your Data</h4> -->
+              <input id="username" type="text" class="input px-3 w-full py-3 text-white rounded-sm inputBackground outline-none mt-4" placeholder="username" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$|^[a-zA-Z0-9+_.-]+$" required>              
+              <input id="phone" type="text" class="input px-3 w-full py-3 text-white rounded-sm inputBackground outline-none mt-4" placeholder="mobile number" pattern="^[0-9]{10}$" required>              
+              <p id="errorUsername" class="mainColor p-1 mt-1 mb-1" style="display:none;"></p> 
+              
+              <button class="w-full py-3 mt-4 outline-none mainColorbg text-white rounded-sm" type="submit">Edit The Profile</button>
+
+            </form>
           </div>
         </div>
         <div
           class="containorHeaderFull p-lg-5 py-4 d-flex justify-content-start"
           id="containorHeaderFull"
         >
-          <div class="containorHeader p-3">
+          <div class="containorHeader p-3">h
             <h1 class="text-white font-weight-bold mb-3" id="headerWelcome">
               The Last Kingdom
             </h1>
@@ -120,11 +118,57 @@
           <!-- Images will be dynamically injected  -->
         </div>
 
+        <div
+          id="containorClicked"
+          class="containorMatch p-3 w-100 pr-0"
+          style="display: none"
+        >
+          <div
+            class="containorClickedInside w-100 p-3 d-flex justify-content-center align-items-center position-relative"
+          >
+            <!-- Iframe             -->
+            <i id="closeShowCase" class="iconClicked fa-sharp fa-solid fa-circle-xmark"></i>
+            <iframe
+              id="iframe"
+              width="660"
+              height="415"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+
+            <div
+              class="containorInformation p-5 d-flex flex-column justify-content-start w-50"
+            >
+              <h2 id="cardMovieContentHeader" class="text-white text-bold px-3">
+                This is the title
+              </h2>
+              <p id="cardMovieContent" class="text-white px-3">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
+                eaque dolores, modi quaerat fuga illo obcaecati itaque incidunt
+                omnis provident nulla quam reiciendis eveniet pariatur suscipit
+                nihil quod maxime molestiae doloribus, recusandae cum error
+                voluptate ratione praesentium. Voluptatem error, laboriosam
+                asperiores dignissimos officiis earum dolore, facilis possimus
+                nisi sed maxime!
+              </p>
+              <div
+                id="containorShowsAction1"
+                class="containorShows w-full p-3 mb-1"
+              ></div>
+            </div>
+            <!-- End -->
+          </div>
+        </div>
+
         <h1 class="text-white font-weight-bold mt-4">Discover</h1>
         <div id="containorShowsAction" class="containorShows w-full p-3 mb-1">
           <!-- Images will be dynamically injected  -->
         </div>
       </div>
+    
+      
     </div>
   </body>
 </html>

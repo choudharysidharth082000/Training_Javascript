@@ -1,4 +1,4 @@
-console.log("Hello world");
+console.log("Hello world for signup");
 // alert("Width Supported for now is 1800px");
 
 const email = document.getElementById("email");
@@ -64,6 +64,7 @@ const validateInput = (val, regex) => {
 
 //using the event listener for checking the input
 email.addEventListener("input", (e) => {
+  console.log(email.value)
   if (
     validateInput(email.value, emailRegex) ||
     validateInput(email.value, usernameRegex)

@@ -31,6 +31,7 @@ const findEmail = (email) => {
   }
 };
 
+
 //login function
 const loginPage = (email, password) => {
   const users = JSON.parse(window.localStorage.getItem("users"));
@@ -57,6 +58,7 @@ formUser.addEventListener("submit", (e) => {
       Math.random().toString(36).substring(2, 15) +
       Math.random().toString(36).substring(2, 15);
     window.localStorage.setItem("token", token);
+    window.localStorage.setItem("email", emailVal);
     window.location.href = "/src/pages/home.html";
   } else {
     alert("Wrong Credentials");
