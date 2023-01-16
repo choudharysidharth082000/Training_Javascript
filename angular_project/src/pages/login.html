@@ -1,10 +1,10 @@
-<div class="containorMain min-w-100 screen-height bg-dark flex-column">
+<div class="containorMain min-w-100 screen-height bg-dark flex-column" ng-controller="controllerValidateLogin">
     <div class="navbar d-flex justify-content-between px-5 py-4">
         <div class="logo">
             <img class="image-logo-netflix" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="">
         </div>
         <div class="buttons d-flex justify-center p-4">
-            <button class="py-3 px-5 mainColorbg text-white shadow-none outline-none mx-4 "><a href="../../index.html" class="text-white text-decoration-none">Signup</a></button>
+            <button ng-click="route('signup')" class="py-3 px-5 mainColorbg text-white shadow-none outline-none mx-4 ">Signup</button>
             
         </div>
     </div>
@@ -17,8 +17,8 @@
                     <h2 class="text-white font-weight-bold">Hi, There!</h2>     
                     <!-- pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required -->
                     <!-- pattern=".{8,}" required -->
-                    <input class="input text-white px-3 w-100 mt-4 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Email or phonenumber" name="email" id="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$|^[a-zA-Z0-9+_.-]+$" required>               
-                    <input class="input w-100 text-white px-3 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Password" name="password" id="password" pattern=".{8,}" required>              
+                    <input class="input text-white px-3 w-100 mt-4 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Email or phonenumber" name="email" id="email" ng-model="email" ng-change="checkEmail()" ng-style="{'border': emailError ? '1px solid red' : 'none'}" required>               
+                    <input class="input w-100 text-white px-3 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Password" name="password" id="password" ng-model="password" required>              
                     <p id="errorUsername" class="mainColor p-1 mt-1 mb-1" style="display:none;">User With this username already exists</p>  
                     <!-- Checkbox for forget password and need help -->
                     <div class="d-flex justify-content-between mt-3 p-2">
@@ -32,7 +32,7 @@
                     
                 </div>
                 <!-- Button for Signup -->
-                <button type="submit" id="buttonSubmit" class="mainColor w-100 py-3 mainColorbg text-white outline-none rounded-sm mt-2">Sign In</button>
+                <button type="submit" ng-click="submitForm($event)" id="buttonSubmit" class="mainColor w-100 py-3 mainColorbg text-white outline-none rounded-sm mt-2">Sign In</button>
                 <div class="containorFreeSpace w-100 py-lg-4"></div>
                 <div class="containorNewLogin w-100 p-2">
                     <p class="gray text-lg-left p-2">New to Netflix?<span class="text-white text-lg-left"><a class="text-white" href="../../index.html">Sign up Now</a></span></p>

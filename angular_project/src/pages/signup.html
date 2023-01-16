@@ -4,27 +4,39 @@
             <img class="image-logo-netflix" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="">
         </div>
         <div class="buttons d-flex justify-center p-4">
-            <button class="py-3 px-5 mainColorbg text-white shadow-none outline-none mx-4 "><a href="/src/pages/login.html" class="text-white outline-none text-decoration-none">Login</a></button>
+            <button ng-click="route('login')" class="py-3 px-5 mainColorbg text-white shadow-none outline-none mx-4 ">Login</button>
             <button class="py-3 px-5 border border-white bg-transparent text-white">English</button>
         </div>
     </div>
 
     <!-- Containor For the Signup and the login -->
     <div class="containorSignup">
-        <form action="" name="signup-page" id="namesignup">
-            {{1+2}}
+        <form action="">
             <div class="contatainorMain p-5 h-100 d-flex justify-content-center align-items-center">
                 <div class="blackBox h-75 w-25 bg-black px-lg-5 py-lg-5 rounded-lg flex-column">
-                    <h2 class="headersignup">I’m in!</h2>     
+                    <h2 class="text-white font-weight-bold">Yes, sign me up!</h2>     
                     <!-- pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required -->
                     <!-- pattern=".{8,}" required -->
                     <!-- <input type="text" ng-model="email"> -->
-                    <input class="input px-3 text-white w-100 mt-4 px-10 py-3 rounded-sm inputBackground outline-none" type="text" ng-model="email" placeholder="Email or phonenumber" required>               
-                    <input ng-model="username" class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Username" name="username" id="username" required>              
-                    <input ng-model="phone" class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Phone Number" name="phone" id="phone" required>              
-                    <input ng-model="password" class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Password" name="password" id="password"  required>   
-                    <input ng-model="cpassword" class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" required>               
-                    <p id="errorUsername" class="mainColor p-1 mt-1 mb-1" ng-style="{'display': emailValid ? 'none' : 'block'}">{{errorInput}}</p> 
+                    <!-- <input type="text" ng-change="checkEmail()" ng-model="email"> -->
+                    <input class="input px-3 text-white w-100 mt-4 px-10 py-3 rounded-sm inputBackground outline-none" type="text" name="email" placeholder="Email or phonenumber" ng-change="checkEmail()" ng-model="email" ng-style="{'border' : emailError ? '1px solid red' : 'none'}" required>               
+                    <input ng-model="username" class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Username" name="username" id="username" ng-change="checkUsername()" ng-model="username" ng-style="{'border' : usernameError ? '1px solid red' : 'none'}" required>              
+                    <input ng-model="phone" class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Phone Number" name="phone" id="phone" ng-change="checkPhone()" ng-model="phone" ng-style="{'border' : phoneError ? '1px solid red' : 'none'}" required>              
+                    <input ng-model="password" class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Password" name="password" id="password" ng-change="checkPassword()" ng-model="password" ng-style="{'border' : passwordError ? '1px solid red' : 'none'}"  required>   
+                    <input  class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" ng-change="checkConfirmPassword()" ng-model="cpassword" ng-style="{'border' : confirmPasswordError ? '1px solid red' : 'none'}" required>               
+                    <!-- <p id="errorUsername" class="mainColor p-1 mt-1 mb-1" ng-style="{'display': emailError ? 'block' : 'error'}">{{errorInput}}</p>  -->
+                    <div class="containorErrors d-flex w-100 justify-content-evenly flex-column">
+                        <p class="mainColor p-1 mt-1 mb-1" ng-style="{'display' : emailError ? 'block' : 'none'}">{{errorEmail}}</p>
+                        <p class="mainColor p-1 mt-1 mb-1" ng-style="{'display' : usernameError ? 'block' : 'none'}">{{errorUsername}}</p>
+                    </div>
+                    <div class="containorErrors d-flex w-100 justify-content-center flex-column">
+                        <p class="mainColor p-1 mt-1 mb-1 text-left" ng-style="{'display' : phoneError ? 'block' : 'none'}">{{errorPhone}}</p>
+                        <p class="mainColor p-1 mt-1 mb-1 text-left" ng-style="{'display' : passwordError ? 'block' : 'none'}">{{errorPassword}}</p>
+                        <p class="mainColor p-1 mt-1 mb-1 text-left" ng-style="{'display' : confirmPasswordError ? 'block' : 'none'}">{{errorConfirmPassword}}</p>                        
+                    </div>
+
+
+        
                     <div class="containorPasswordValidationBlock mt-2 p-2" style="display: none;" id="passwordValidate">
                         <p id="length" class="p-0 m-0">Atleast 10 characters <i class="fa-solid fa-circle-check"></i></p>
                         <p id="uppercase" class="m-0">Atleast one uppercase letter <i class="fa-solid fa-circle-check"></i></p>
@@ -42,7 +54,7 @@
                         </div>
                 </div>
                 <!-- Button for Signup -->
-                <button type="submit" id="buttonSubmit" class="mainColor w-100 py-3 mainColorbg text-white outline-none rounded-sm mt-2">Sign In</button>
+                <button type="submit" ng-click="submitForm($event)" id="buttonSubmit" class="mainColor w-100 py-3 mainColorbg text-white outline-none rounded-sm mt-2">Sign In</button>
                 <div class="containorFreeSpace w-100 py-lg-4"></div>
                 <div class="containorNewLogin w-100 p-2">
                     <p class="gray text-lg-left p-2">Already at Netflix?<span class="text-white text-lg-left"><a class="text-white" href="/src/pages/login.html">Signin Now</a></span></p>

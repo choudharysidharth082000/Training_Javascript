@@ -10,5 +10,9 @@ $urlRouterProvider.otherwise('/login');
     .state('signup', {
       url: '/signup',
       templateUrl: 'src/pages/signup.html',
-    });
+    })
+    .state('dashboard', {
+        url: '/dashboard',
+        templateUrl: 'src/pages/Dashboard.html',
+      });
 });
