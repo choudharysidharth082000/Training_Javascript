@@ -1,0 +1,45 @@
+<div class="containorMain min-w-100 screen-height bg-dark flex-column">
+    <div class="navbar d-flex justify-content-between px-5 py-4">
+        <div class="logo">
+            <img class="image-logo-netflix" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="">
+        </div>
+        <div class="buttons d-flex justify-center p-4">
+            <button class="py-3 px-5 mainColorbg text-white shadow-none outline-none mx-4 "><a href="../../index.html" class="text-white text-decoration-none">Signup</a></button>
+            
+        </div>
+    </div>
+
+    <!-- Containor For the Signup and the login -->
+    <div class="containorSignup">
+        <form action="" name="signup-page" id="namesignup">
+            <div class="contatainorMain p-5 h-100 d-flex justify-content-center align-items-center">
+                <div class="blackBox h-75 w-25 bg-black px-lg-5 py-lg-5 rounded-lg flex-column">
+                    <h2 class="text-white font-weight-bold">Hi, There!</h2>     
+                    <!-- pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required -->
+                    <!-- pattern=".{8,}" required -->
+                    <input class="input text-white px-3 w-100 mt-4 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Email or phonenumber" name="email" id="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$|^[a-zA-Z0-9+_.-]+$" required>               
+                    <input class="input w-100 text-white px-3 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Password" name="password" id="password" pattern=".{8,}" required>              
+                    <p id="errorUsername" class="mainColor p-1 mt-1 mb-1" style="display:none;">User With this username already exists</p>  
+                    <!-- Checkbox for forget password and need help -->
+                    <div class="d-flex justify-content-between mt-3 p-2">
+                        <div class="checkbox">
+                            <input type="checkbox" name="remember" id="remember">
+                            <label for="remember" class="inputPlaceholderColor">Remember me</label>
+                        </div>
+                        <div class="needHelp">
+                            <a href="#" class="inputPlaceholderColor">Need help?</a>
+                        </div>
+                    
+                </div>
+                <!-- Button for Signup -->
+                <button type="submit" id="buttonSubmit" class="mainColor w-100 py-3 mainColorbg text-white outline-none rounded-sm mt-2">Sign In</button>
+                <div class="containorFreeSpace w-100 py-lg-4"></div>
+                <div class="containorNewLogin w-100 p-2">
+                    <p class="gray text-lg-left p-2">New to Netflix?<span class="text-white text-lg-left"><a class="text-white" href="../../index.html">Sign up Now</a></span></p>
+                    <p class="gray p-2 text-sm">This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</p>
+                </div>
+    
+            </div>
+        </form>
+    </div>
+ </div>

@@ -1,0 +1,107 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+    transition: all 2s ease;
+}
+.containorBackdrop{
+    background-size: cover;
+    /* background-image: url(https://i.imgur.com/dP7i2ya.gif); */
+    background-image: url("../../public/images/banner.webp");
+    background-position: center;
+    background-position-x: center;
+    background-position-y: center;
+    object-fit: cover;
+}
+.main{
+    transition: 1s ease;
+}
+
+.netflix {
+    height: 434.44px;
+}
+.heightBackDrop{
+    height: 500px;
+}
+.bannerButton{
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    margin-right: 1rem;
+    background-color: rgba(51,51,51,.5);
+    padding: 0.5rem 2rem
+}
+.widthShows{
+    width: 166px;
+    height: 250px;
+    object-fit: contain;
+}
+.containorShows{
+    overflow-x: scroll;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    padding: 28px;
+}
+.containorShows::-webkit-scrollbar {
+    display: none;
+  }
+.containorPoster{
+    max-height: 240px;
+    object-fit: contain;
+    margin-right: 5px;
+    cursor: pointer;
+    /* transition: -webkit-transform .45s;
+    transition: transform .45s;
+    transition: transform .45s,-webkit-transform .45s; */
+    transition: 1s ease;
+}
+.containorPoster img{
+    width: 200px;
+    height: 270px;
+    object-fit: contain;
+}
+.max-height-poster{
+    max-height: 300px;
+}
+
+.containorPoster:hover{
+    scale: 1.1;
+}
+
+.sidebar{
+    position: fixed;
+    width: 0;
+    height: 100vh;
+    display: none;
+    background-color: black;
+    right: 0;
+    top: 0;
+}.containorShows1{
+    display: none;
+}
+.containorClickedImage{
+    height: 500px;
+}
+i{
+    color: #fff;
+    margin: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+}
+
+.containorUserEmail{
+    background-color: #808080;
+    color: white;
+}
+
+.iconClicked{
+    position: absolute;
+    right: 40px;
+    top: 40px;
+}

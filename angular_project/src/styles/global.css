@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+Adlam+Unjoined:wght@700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 2s ease ;
+}
+/* .width-all-file{
+    width: 1800px;
+} */
+.h-101{
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+.bottom-0{
+    bottom: 0;
+    margin-left: -30px;
+    height: 7.4rem;
+    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.61),#111);
+    
+}
+.border-right{
+    border-right: 20px solid white;
+}
+.containorPasswordValidationBlock{
+    transition: 2s ease;
+}
+.bg-black 
+{
+    background-color: black;
+}
+.min-height-custom-login{
+    height: 800px;
+}
+.mainColor{
+    color: #E50914
+}
+.headersignup{
+    /* font-family: 'Bebas Neue', cursive;
+    font-family: 'Noto Sans Adlam Unjoined', sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-weight: bold;
+}
+.mainColorbg{
+    background-color: #E50914;
+}
+.inputBackground{
+    background-color: #333333;
+}idn
+.inputColor {
+    color: #333333;
+}
+.customColor{
+    background-color: #0d7e80;
+}
+.inputPlaceholderColor {
+    color: #cac9c9;
+}
+.gray{
+    color: #999999
+}
+.h-full{
+    width: 100%
+}
+.w-full{
+    width: 100%
+}
+.screen-height{
+    height: 140vh;
+}
+
+.containorMain{
+    background: linear-gradient(0deg,rgba(0,0,0,.8) 0,transparent 60%,rgba(0,0,0,.8)),url(https://assets.nflxext.com/ffe/siteui/vlv3/757ab38f-5d08-40bc-b3eb-eaba63ed8203/93c34f94-56c8-40a7-8b2e-b4aac6427977/GB-en-20210125-popsignuptwoweeks-perspective_alpha_website_medium.jpg) 50% no-repeat;
+    background-size: cover;
+    position: relative
+}
+
+.image-logo-netflix{
+    width: 150px;
+    height: 100px;
+    /* background-color: red; */
+    object-fit: contain;
+}
+.notification{
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+    cursor: pointer;
+
+}
+.outline-none 
+{
+    border: none;
+    outline: none;
+}
+/* Placeholders edit  */
+input::placeholder {
+    color: #999999;
+    padding-left: 20px;
+}

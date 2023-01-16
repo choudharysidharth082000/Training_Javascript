@@ -1,0 +1,10 @@
+<input type="text" placeholder="email" ng-model="email">
+    <p class="text-white">{{count}}</p>
+    <!-- <form action="">
+        <input ng-model="email" type="text" name="email" placeholder="email" id="email" ng-change="inputChange()" ng-style="{'color': emailValid ? 'red' : 'green', 'background-color': 'black'}">
+        <input type="text" ng-model="password">
+        <button ng-click="submitForm($event)">Click Here</button>
+    </form> -->
+    <!-- UI Router -->
+    <a ui-sref="login">Login Page</a>
+    <a ui-sref="signup">Signup Page</a>

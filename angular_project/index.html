@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myapp">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angular Movie Clone</title>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/src/styles/global.css">
     <!-- //script tags  -->
     <script defer src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script defer src="/bower_components/angular/angular.js"></script>
     <script defer src="/bower_components/angular-route/angular-route.js"></script>
+    <script defer src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script defer src="/app.js"></script>
-    <script defer src="/src/configs/ngRouteConfig.js"></script>
+    <script defer src="/src/controllers/authentication/signup.controller.js"></script>
+    <script defer src="/src/services/authentication/validation.authentication.js"></script>
+    <script defer src="/src/configs/ngRouteConfig.config.js"></script>
 </head>
-<body>
-    <h1>This is the starting page</h1>    
+<body class="bg-black">
+    <div ui-view></div>
 </body>
 </html>
+
+
+

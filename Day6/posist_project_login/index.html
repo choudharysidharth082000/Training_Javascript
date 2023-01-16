@@ -17,58 +17,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:wght@200;400;600&display=swap" rel="stylesheet">
 </head>
 <body class="bg-black">
- <div class="containorMain min-w-100 screen-height flex-column root" id="root">
-    <div class="navbar d-flex justify-content-between px-5 py-4">
-        <div class="logo">
-            <img class="image-logo-netflix" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/1280px-Netflix_2015_logo.svg.png" alt="">
-        </div>
-        <div class="buttons d-flex justify-center p-4">
-            <button class="py-3 px-5 mainColorbg text-white shadow-none outline-none mx-4 "><a href="/src/pages/login.html" class="text-white outline-none text-decoration-none">Login</a></button>
-            <button class="py-3 px-5 border border-white bg-transparent text-white">English</button>
-        </div>
-    </div>
-
-    <!-- Containor For the Signup and the login -->
-    <div class="containorSignup">
-        <form action="" name="signup-page" id="namesignup">
-            <div class="contatainorMain p-5 h-100 d-flex justify-content-center align-items-center">
-                <div class="blackBox h-75 w-25 bg-black px-lg-5 py-lg-5 rounded-lg flex-column">
-                    <h2 class="headersignup">I’m in!</h2>     
-                    <!-- pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required -->
-                    <!-- pattern=".{8,}" required -->
-                    <input class="input px-3 text-white w-100 mt-4 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Email or phonenumber" name="email" id="email" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$" required>               
-                    <input class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Username" name="username" id="username" pattern="^[a-zA-Z0-9+_.-]+$" required>              
-                    <input class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="text" placeholder="Phone Number" name="phone" id="phone" pattern="^[0-9]{10}$" required>              
-                    <input class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Password" name="password" id="password" pattern=".{8,}" required>   
-                    <input class="input px-3 text-white w-100 mt-3 px-10 py-3 rounded-sm inputBackground outline-none" type="password" placeholder="Confirm Password" name="cpassword" id="cpassword" pattern=".{8,}" required>               
-                    <p id="errorUsername" class="mainColor p-1 mt-1 mb-1" style="display:none;"></p> 
-                    <div class="containorPasswordValidationBlock mt-2 p-2" style="display: none;" id="passwordValidate">
-                        <p id="length" class="p-0 m-0">Atleast 10 characters <i class="fa-solid fa-circle-check"></i></p>
-                        <p id="uppercase" class="m-0">Atleast one uppercase letter <i class="fa-solid fa-circle-check"></i></p>
-                        <p id="lowercase" class="m-0">Atleast one lowercase letter <i class="fa-solid fa-circle-check"></i></p>
-                        <p id="number" class="m-0">Atleast two numbers <i class="fa-solid fa-circle-check"></i></p>   
-                    </div>
-                    <!-- Checkbox for forget password and need help -->
-                    <div class="d-flex justify-content-between mt-3 p-2">
-                        <div class="checkbox">
-                            <input type="checkbox" name="remember" id="remember">
-                            <label for="remember" class="inputPlaceholderColor">Remember me</label>
-                        </div>
-                        <div class="needHelp">
-                            <a href="#" class="inputPlaceholderColor">Need help?</a>
-                        </div>
-                </div>
-                <!-- Button for Signup -->
-                <button type="submit" id="buttonSubmit" class="mainColor w-100 py-3 mainColorbg text-white outline-none rounded-sm mt-2">Sign In</button>
-                <div class="containorFreeSpace w-100 py-lg-4"></div>
-                <div class="containorNewLogin w-100 p-2">
-                    <p class="gray text-lg-left p-2">Already at Netflix?<span class="text-white text-lg-left"><a class="text-white" href="/src/pages/login.html">Signin Now</a></span></p>
-                    <p class="gray p-2 text-sm">This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.</p>
-                </div>
-    
-            </div>
-        </form>
-    </div>
- </div>
+ 
 </body>
 </html>
