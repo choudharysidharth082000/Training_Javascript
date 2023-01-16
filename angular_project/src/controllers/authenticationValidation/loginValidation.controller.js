@@ -3,6 +3,11 @@
 myapp.controller(
   "controllerValidateLogin",
   function ($scope, serviceValidation, loginService, $location) {
+
+    //protected route checking if the istokenp is true
+    if (localStorage.getItem("isToken") == "true") {
+        $location.path("/dashboard");
+    }
     $scope.emailError = false;
     $scope.emailErrorMessage = "Invalid Email";
     $scope.email = "";
