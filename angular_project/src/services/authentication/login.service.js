@@ -29,5 +29,10 @@ const serviceLogin = myapp.factory("loginService", function ($rootScope) {
       alert("Please enter valid email and password");
     }
   };
-  return { login };
+  //logout service
+  const logout = () => {
+    localStorage.setItem("isToken", false);
+    $rootScope.user = null;
+  };
+  return { login, logout };
 });

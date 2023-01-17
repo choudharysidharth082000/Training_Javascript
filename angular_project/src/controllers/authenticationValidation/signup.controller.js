@@ -3,11 +3,10 @@
 const validationController = myapp.controller(
   "controllerValidate",
   function ($scope, $location, serviceValidation, $rootScope, signupService) {
-
     //protected route checking if the istoken is true
     if (localStorage.getItem("isToken") == "true") {
       $location.path("/dashboard");
-    } 
+    }
     //color
     $scope.color = "#E50914";
     //models for the input

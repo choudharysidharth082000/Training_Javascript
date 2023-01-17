@@ -34,13 +34,15 @@
       defer
       src="/src/services/authentication/validation.authentication.js"
     ></script>
+    <script defer src="/src/configs/dashboard.config.js"></script>
+    <script defer src="/src/configs/ngRouteConfig.config.js"></script>
+    <script defer src="/src/providers/dashboard.provider.js"></script>
     <script defer src="/src/controllers/authenticationValidation/loginValidation.controller.js"></script>
     <script defer src="/src/services/authentication/login.service.js"></script>
     <script defer src="/src/services/authentication/signup.service.js"></script>
     <script defer src="/src/controllers/dashboard/dashboard.controller.js"></script>
-    <script defer src="/src/configs/ngRouteConfig.config.js"></script>
   </head>
-  <body class="bg-black" ng-controller="mainController">
+  <body class="bg-black position-relative" ng-controller="mainController">
     <div ui-view></div>
   </body>
 </html>

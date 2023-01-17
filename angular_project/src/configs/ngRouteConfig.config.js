@@ -1,9 +1,9 @@
 ///<reference path="../../app.js" />
 //creating the routes for the app
 myapp.config(function ($stateProvider, $urlRouterProvider) {
-$urlRouterProvider.otherwise('/login');
+$urlRouterProvider.otherwise('/signup');
   $stateProvider
-    .state('    ', {
+    .state('login', {
       url: '/login',
       templateUrl: 'src/pages/login.html'
     })
