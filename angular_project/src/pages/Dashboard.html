@@ -29,7 +29,7 @@
         </div>
       </div>
       <!-- End  -->
-  
+
       <div id="sidebar" class="sidebar" style="display: none">
         <div
           class="containorHeaderClose border-right w-full p-4 d-flex px-3 justify-content-end"
@@ -71,7 +71,7 @@
           >
             Edit Profile
           </button>
-  
+
           <form
             action=""
             id="editProfile"
@@ -100,7 +100,7 @@
               class="mainColor p-1 mt-1 mb-1"
               style="display: none"
             ></p>
-  
+
             <button
               class="w-full py-3 mt-4 outline-none mainColorbg text-white rounded-sm"
               type="submit"
@@ -115,17 +115,14 @@
         id="containorHeaderFull"
       >
         <div class="containorHeader p-3">
-          h
           <h1 class="text-white font-weight-bold mb-3" id="headerWelcome">
             <!-- The Last Kingdom -->
-            {{message}}
+            {{data[randomIndex].original_title}}
           </h1>
           <button class="bannerButton">Play</button>
           <button class="bannerButton mb-2">My List</button>
           <p class="text-white w-25" id="bannerDiscription">
-            A show of heroic deeds and epic battles with a thematic depth that
-            embraces politics, religion, warfare, courage, love, loyalty and our
-            universal sea ...
+            {{bannerOverview}}
           </p>
         </div>
       </div>
@@ -136,9 +133,15 @@
     >
       <h1 class="text-white font-weight-bold">Netflix Originals</h1>
       <div id="containorShows" class="containorShows w-full p-3">
+        <div
+          class="containorPoster max-height-poster"
+          ng-repeat="element in data"
+        >
+          <img src="{{posterPath + element.poster_path}}" alt="" />
+        </div>
         <!-- Images will be dynamically injected  -->
       </div>
-  
+
       <div
         id="containorClicked"
         class="containorMatch p-3 w-100 pr-0"
@@ -161,7 +164,7 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
           ></iframe>
-  
+
           <div
             class="containorInformation p-5 d-flex flex-column justify-content-start w-50"
           >
@@ -174,8 +177,8 @@
               omnis provident nulla quam reiciendis eveniet pariatur suscipit
               nihil quod maxime molestiae doloribus, recusandae cum error
               voluptate ratione praesentium. Voluptatem error, laboriosam
-              asperiores dignissimos officiis earum dolore, facilis possimus nisi
-              sed maxime!
+              asperiores dignissimos officiis earum dolore, facilis possimus
+              nisi sed maxime!
             </p>
             <div
               id="containorShowsAction1"
@@ -185,12 +188,11 @@
           <!-- End -->
         </div>
       </div>
-  
+
       <h1 class="text-white font-weight-bold mt-4">Discover</h1>
       <div id="containorShowsAction" class="containorShows w-full p-3 mb-1">
         <!-- Images will be dynamically injected  -->
       </div>
     </div>
   </div>
-  
 </div>

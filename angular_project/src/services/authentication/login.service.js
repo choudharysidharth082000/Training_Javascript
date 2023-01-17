@@ -31,7 +31,7 @@ const serviceLogin = myapp.factory("loginService", function ($rootScope) {
   };
   //logout service
   const logout = () => {
-    localStorage.setItem("isToken", false);
+    localStorage.setItem("isToken", true);
     $rootScope.user = null;
   };
   return { login, logout };
