@@ -2,12 +2,24 @@
 
 const controllerDashboard = myapp.controller(
   "dashboardController",
-  function ($scope, $location, loginService, dashboardService, $rootScope, $http) {
+  function (
+    $scope,
+    $location,
+    loginService,
+    dashboardService,
+    $rootScope,
+    $http
+  ) {
     //checking if the login is true then only in dashboard
     if (localStorage.getItem("isToken") == false) {
       console.log("Hello world from the dashboard");
       $location.path("/login");
     }
+
+
+
+    //user if exists
+    $scope.user = JSON.parse(localStorage.getItem("user"));
 
     //string truncate method
     const truncate = (string, n) => {
@@ -65,7 +77,7 @@ const controllerDashboard = myapp.controller(
           $scope.youtubeIframe = `https://www.youtube.com/embed/${$scope.containorKeyVideo}?start=2&autoplay`;
           const iframe = document.getElementById("iframe");
           iframe.src = $scope.youtubeIframe;
-          console.log($scope.youtubeIframe)
+          console.log($scope.youtubeIframe);
         })
         .catch((err) => {
           console.log(err);
@@ -78,7 +90,18 @@ const controllerDashboard = myapp.controller(
     $scope.closeContainor = () => {
       $scope.containorOpen = false;
     };
-    
+
+    $scope.openSidebar = false;
+    //open the sidebar
+    $scope.openSideBarFunction = () => {
+      console.log("Function Clicked");
+      $scope.openSidebar = true;
+    };
+    //close the sidebar
+    $scope.closeSideBarFunction = () => {
+      console.log("Function Clicked");
+      $scope.openSidebar = false;
+    };
 
     //innitialize the users array in the localstorage
   }

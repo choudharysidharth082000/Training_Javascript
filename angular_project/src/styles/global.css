@@ -7,7 +7,7 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     transition: all 0.4s ease ;
 }
-h3, h2{
+h3, h2, h1{
     font-weight: 600;
 }
 /* .width-all-file{

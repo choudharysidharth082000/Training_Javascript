@@ -22,6 +22,7 @@
             <img
               id="logout"
               src="../../public/images/Netflix-avatar.png"
+              ng-click="openSideBarFunction()"
               class="notification"
               alt="notifications"
             />
@@ -30,11 +31,11 @@
       </div>
       <!-- End  -->
 
-      <div id="sidebar" class="sidebar" style="display: none">
+      <div id="sidebar" class="sidebar" ng-style="{'display' : openSidebar ? 'block' : 'none'}">
         <div
           class="containorHeaderClose border-right w-full p-4 d-flex px-3 justify-content-end"
         >
-          <div class="closeIcon">
+          <div class="closeIcon" ng-click="closeSideBarFunction()">
             <i id="iconClose" class="fas fa-times text-white"></i>
             <!-- Disbaled Button -->
           </div>
@@ -53,9 +54,9 @@
               <div
                 class="containorUserEmail w-full p-2 d-flex justify-content-center align-items-center"
               >
-                <h5 id="emailUser" class="text-white font-weight-bold">
-                  User Name
-                </h5>
+                <h6 id="emailUser" class="text-white font-weight-bold">
+                  {{user.username}}
+                </h6>
               </div>
               <button
                 id="logout1"
@@ -121,7 +122,7 @@
           </h1>
           <button class="bannerButton">Play</button>
           <button class="bannerButton mb-2">My List</button>
-          <p class="text-white w-25" id="bannerDiscription">
+          <p class="text-white w-25 text-sm" id="bannerDiscription">
             {{bannerOverview}}
           </p>
         </div>

@@ -20,6 +20,7 @@ const serviceLogin = myapp.factory("loginService", function ($rootScope) {
       console.log(checkUser);
       $rootScope.user = checkUser[0];
       localStorage.setItem("isToken", true);
+      localStorage.setItem("user", JSON.stringify(checkUser[0]));
       return {
         status: true,
         messgae: "Login Success",
