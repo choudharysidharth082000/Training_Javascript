@@ -131,21 +131,41 @@
     <div
       class="containorNetflixOriginals w-full p-3 px-4 mt-lg-5 d-flex flex-column justify-content-around"
     >
-      <h1 class="text-white font-weight-bold">Netflix Originals</h1>
+      <h2 class="text-white font-weight-bold">Netflix Originals</h2>
       <div id="containorShows" class="containorShows w-full p-3">
         <div
           class="containorPoster max-height-poster"
           ng-repeat="element in data"
+          ng-click="clickedChangeBanner(element.original_title, element.overview, element.id)"
         >
-          <img src="{{posterPath + element.poster_path}}" alt="" />
+          <img ng-src="{{posterPath + element.poster_path}}" alt="" />
         </div>
         <!-- Images will be dynamically injected  -->
+        <div id="containorShows" class="containorShows w-full p-3">
+          <div
+            class="containorPoster max-height-poster"
+            ng-repeat="element in data"
+            ng-click="clickedChangeBanner(element.original_title, element.overview, element.id)"
+          >
+            <img ng-src="{{posterPath + element.poster_path}}" alt="" />
+          </div>
+          <!-- Images will be dynamically injected  -->
+          
+            <!-- <div
+              class="containorPoster max-height-poster"
+              ng-repeat="element in data"
+              ng-click="clickedChangeBanner(element.original_title, element.overview)"
+            >
+              <img src="{{posterPath + element.poster_path}}" alt="" />
+            </div> -->
+          </div>
+        </div>
       </div>
 
       <div
         id="containorClicked"
         class="containorMatch p-3 w-100 pr-0"
-        style="display: none"
+        ng-style="{'display': containorOpen ? 'block' : 'none'}"
       >
         <div
           class="containorClickedInside w-100 p-3 d-flex justify-content-center align-items-center position-relative"
@@ -154,6 +174,7 @@
           <i
             id="closeShowCase"
             class="iconClicked fa-sharp fa-solid fa-circle-xmark"
+            ng-click="closeContainor()"
           ></i>
           <iframe
             id="iframe"
@@ -169,29 +190,41 @@
             class="containorInformation p-5 d-flex flex-column justify-content-start w-50"
           >
             <h2 id="cardMovieContentHeader" class="text-white text-bold px-3">
-              This is the title
+              {{videoHeaderName}}
             </h2>
             <p id="cardMovieContent" class="text-white px-3">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero
-              eaque dolores, modi quaerat fuga illo obcaecati itaque incidunt
-              omnis provident nulla quam reiciendis eveniet pariatur suscipit
-              nihil quod maxime molestiae doloribus, recusandae cum error
-              voluptate ratione praesentium. Voluptatem error, laboriosam
-              asperiores dignissimos officiis earum dolore, facilis possimus
-              nisi sed maxime!
+              {{videoOverview}}
             </p>
             <div
               id="containorShowsAction1"
               class="containorShows w-full p-3 mb-1"
-            ></div>
+            >
+              <!-- Images will be dynamically injected  -->
+              <div
+                class="containorPoster max-height-poster"
+                ng-repeat="element in second"
+              >
+                <img ng-src="{{posterPath + element.poster_path}}" alt="" />
+              </div>
+            </div>
+
+          </div>
           </div>
           <!-- End -->
         </div>
       </div>
-
-      <h1 class="text-white font-weight-bold mt-4">Discover</h1>
+      <div
+      class="containorNetflixOriginals w-full p-3 px-4 mt-lg-5 d-flex flex-column justify-content-around"
+    >
+      <h2 class="text-white font-weight-bold mt-4">Discover</h2>
       <div id="containorShowsAction" class="containorShows w-full p-3 mb-1">
         <!-- Images will be dynamically injected  -->
+        <div
+          class="containorPoster max-height-poster"
+          ng-repeat="element in second"
+        >
+          <img ng-src="{{posterPath + element.poster_path}}" alt="" />
+        </div>
       </div>
     </div>
   </div>

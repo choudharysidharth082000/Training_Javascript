@@ -1,4 +1,7 @@
 ///<reference path="../../../app.js" />
+
+
+
 //creating the controller for handling the signup validations
 const validationController = myapp.controller(
   "controllerValidate",

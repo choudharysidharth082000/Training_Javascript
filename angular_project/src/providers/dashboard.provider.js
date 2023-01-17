@@ -20,6 +20,19 @@ const providerDashboard = myapp.provider("dashboardService", function () {
           $log.error(error);
         });
     };
+    functionObject.getMovieDetails = function (id, callback) {
+      $http({
+        method: "GET",
+        url: "https://api.themoviedb.org/3/movie/now_playing?api_key=94f9f5533f279def2c111bf737c3e9a9",
+      })
+        .then((result) => {
+          callback(result);
+        })
+        .catch((error) => {
+          $log.error(error);
+        });
+    };
+
     return functionObject;
   };
 });
