@@ -33,7 +33,7 @@
 
       <div id="sidebar" class="sidebar" ng-style="{'display' : openSidebar ? 'block' : 'none'}">
         <div
-          class="containorHeaderClose border-right w-full p-4 d-flex px-3 justify-content-end"
+          class="containorHeaderClose w-full p-2 d-flex px-3 justify-content-end"
         >
           <div class="closeIcon" ng-click="closeSideBarFunction()">
             <i id="iconClose" class="fas fa-times text-white"></i>
@@ -43,14 +43,14 @@
         <div class="containorEditProfile w-100 p-3">
           <h1 class="text-white p-3 font-weight-bold">Profile</h1>
           <div class="containorTwo d-flex">
-            <div class="containorIcon w-25">
+            <!-- <div class="containorIcon w-25">
               <img
                 class="avatar"
                 src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                 alt=""
               />
-            </div>
-            <div class="containorData w-75 p-1 d-flex flex-column">
+            </div> -->
+            <div class="containorData w-100 p-1 d-flex flex-column">
               <div
                 class="containorUserEmail w-full p-2 d-flex justify-content-center align-items-center"
               >
@@ -61,28 +61,44 @@
               <button
                 id="logout1"
                 class="w-full p-2 text-white outline-none mainColorbg"
+                ng-click="logout()"
               >
                 Sign Out
               </button>
+              <p class="mt-3 subscription">Your subscriptions ends at 12/02/2024</p>
             </div>
           </div>
-          <button
-            id="editProfileMain"
-            class="w-100 border border-white rounded-sm py-2 mt-5 text-white bg-transparent"
-          >
-            Edit Profile
-          </button>
+          <div class="containorButtonsRow w-full p-3 d-flex justify-content-start">
+              <button
+                 id="editProfileMain"
+                  ng-click="openProfile()"
+                class="w-50 border border-white rounded-sm py-2 mx-2 text-white bg-transparent "
+            >
+              Edit Profile
+            </button>
+            <button
+              id="editProfileMain"
+              ng-click="openWishlistFunction()"
+              class="w-50 outline-none rounded-sm py-3 text-white mainColorbg mx-2"
+            >
+              Wishlist
+            </button>
+          </div>
 
-          <form
+
+          <div class="containorFormEdit w-full p-2 mt-4" ng-style="{'display' : openEditProfie ? 'flex' : 'none'}">
+            <form
             action=""
             id="editProfile"
-            class="w-100 p-3 mt-5"
-            style="display: none"
+            class="w-50 p-3 d-flex flex-column justify-content-start"
+            style="display: block"
+
           >
             <!-- <h4 class="text-white">Edit Your Data</h4> -->
             <input
               id="username"
               type="text"
+              ng-model="oldValUsername"
               class="input px-3 w-full py-3 text-white rounded-sm inputBackground outline-none mt-4"
               placeholder="username"
               pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$|^[a-zA-Z0-9+_.-]+$"
@@ -90,8 +106,9 @@
             />
             <input
               id="phone"
+              ng-model="oldValPhone"
               type="text"
-              class="input px-3 w-full py-3 text-white rounded-sm inputBackground outline-none mt-4"
+              class="input px-3 w-full py-3 text-white rounded-sm inputBackground outline-none mt-4 rounded-sm"
               placeholder="mobile number"
               pattern="^[0-9]{10}$"
               required
@@ -104,11 +121,42 @@
 
             <button
               class="w-full py-3 mt-4 outline-none mainColorbg text-white rounded-sm"
+              ng-click="updateProfile($event)"
               type="submit"
             >
               Edit The Profile
             </button>
           </form>
+          <div class="containorShowprofile w-50 p-2">
+            <img class="w-full imageAvatar
+            " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAnFBMVEXRUhn////PSgDRUBXPRgDmpIjQThDQTQv99/Tdhmj++vjinYnOQADxz8PWYCj78/H24NbdgVrVZDXswbbloYn67efZdVHbf17uwa/nqpTSVBXz1szvyr7vx7jZckjad0703Nbjl3jor5r23dHgknn45t/SWCbcfVXXaj7svKrVYjPorpjYbDzgkHLjm4HTWR7bgWPZcELhmILrt6JzLQFfAAAIv0lEQVR4nO2dW3uiMBCGMUkTpaLWFUUQPFQ8tci6/v//tqB1C5KEoHYFnnkvelMh+UgymZwmmnYF1ozGf0A3fX/mHufz6e46Bz8NGv+4uqZhvS6nfZsQwhjG/1tg62fFme5+s9IoQvS/SzuDQ//n5PXcgYfI07SdQYufkmcuRjuG6BO1naDD5k+o03vHQ5uwZxbdBfIjZsZqdcjTC+8MRt2HyzMHdjlK7wR7e7S+90GHlEae9ng7YwYhKpO+qBk6j9Tnj1nJ9GnYfqTCSb88ze9CjsKeXkCf/1YW85lCWksX+wIC3R16thgu6EVcJgei7s81g1IWYATuCLKsjzukpVxJ/bdyFmAMcblZNqYIM/6/eAI77Nk6xNBNtirqxiiqc9RTdXfcsKQ19AzLDA/ff2txkaC5okCj3AKjenpIlqJvddrnXk3VGTBYyQVGpbgZ975K77jsX5xKjNSGVf6m9AKjtoi01Xq93qy0hNOl6JM3+yU2MgkwphGpuQZyVBGoB+XtJvJASlOMW1o6T1QV3OkpCDTLNpQoAD0ouGx6q7p1VGMjBVM6qLBAJYVuheuoksL3VZUFKij0N9XoCUXkKuxWXKCG+/Lewj9U2crE5MzgmF7FS1DLWVU0dtUXKJ7fiNiuKjCeyId8iGzMoHzTojeBV3zf2/ks1brEPdAdx9iYQdnnLIpAyUd6Mkrv7UmlPbUMGA2t7znT7jYIq94JZqFMW48tx7eO843GamJhrsAUEdIm8YaKZ2cFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIDng795dlYUwRnoGcHv7QQkgej3cWSJx32VdBZPMPSF4N34lNVOP4E3jPG4P2dLx/jm1zcTjy+RTtedBHY7QfEDbfjrNW8JWoMv+vzXITfOqtNLYHZj3kPeA2ggOkL5wj/fRN71ZoJukt6mqETint+mJ7nk4Df3kCrui0JX+YT3e9YSndd22tw8tSXnu83CcWokccYajT33GyNhfDWXqxB/moLfd7ntAIeSLDmF4w9k4zclOHJzjCzR7/m1DtvC6B7ciBfSLG0LH9yjG0moLZNXi+hGVCSNKb8GkYnoAcPmlAj5Jc6Rzq9WMvBKdiC+w8mAuJI2BCfrJOG8WtmWjjmBz/5hCoyfDCQLY3TMfjFJ6Kp3wffFfWECvaz1l3zBKAluu5EjtnQNruUSni7nfo+vjyJuCeNrY0NDYSOImN9wfhYz2Rut6wygQPxBAlEEBLQVPqOP06WSE2Twpkgu8mhb+7REMhR/D3FINbSUpDBvfz+GmbTRNIybztBST/ZOff8dcBkzEkgK3BDWINyXRYOaDL/8Q4zYSB6Br7glPb2XvkvfOhnZhEXOKiP2UFqDOHbxAhL2FzGmO++gyOX8DBx5tJpbA++xnGjiTWcRvE3fgoUjj1IpCRJAp/IkGilnUcj2Bkt6Sl7WAakjTb79kCQ+RUV4GmNJmigRm7oCjGSxZKTuryo8txdThOKrLMJIJUOiWAVSV1cVgzty+pfE7v5C1LNDHUzsw3J8nBiO3zOMxXgkirOvFp5RzlJu5pDYUVBlcuXERqa9s5iljHvXt7w2zx484G4GPycYCbZljoUKzUO6eFjY4nYtZrDitJf7496v8yI6kSJRu3lYqVaIiSfsOt+9rLeLO3d+YSN3vgiH8m43D3OXTIHSD0m1a35kDatyvGI+XakhPSN18fNJuTOsLxyFn3Hta4uD8V2XMY1VumK5y5mDkewIqHRQe8LpX0uk3h31NM/MfH3FO7p9M2lHMVOo8H6mbyS338fUnaoFjmPrW+9i0VMDM7XK4GZmSMQTTHkoD0vR7yL3PCQYJFuBdBIgQWbSqkCA+zT8GTkuN14ZZCVnxNRv5cncM4BtlajFGdwCCwsYjW8oRStV39T7bn93bW2Yd4MpmMh8+qxEIpziF7JN2THx/DLnyYyTijaFS9EtGnqscCleWQzxKkgWPbv0wzYFr7zhOA95kLci/ZI+aF+lcDRNv5mF+7SRNRG0ULdsBtfJq4DEHiUnhYyd3niHQyvLn9cM4+OCY+UxGig7V45iP3gNRS9qxai7NmdOPF7hzII4MH7+0M5RainmAN8aIRajw1YhjV4g9JUwT1AS6ZQVpft8g9O0dvfEF6UsGQyS/wX3K7HA3f5FzkgqEaPOXl6NusfNvVeG0GiALp48NA15gM9cc7HOyR5GJJiIRJrO3H7EtUuYhKMB14d2BkNb7gliW+58c4xoBkS9pZX9xuZx6dmPCp+KGSLtz/lxNvPNE74/m7x4KhEwaUdmkLsZb4abPI2SR+v90ZnNer3ZbGaNgw5pPzz+ZpyMHW68mF0Yq1N6jIkXaiNPXd0GnsKKEmKH8V/hdOTdXLa7FNk7gzyhPdwWr2Sl3Msk9DHd2kSRFviYVnFPsrTwfMxuxpGtNBgFVwM+d1i3ONKMvPgX56hpup/kuVdX/wQYhcuj4TiGtQgifRoLd3WTGPsNWhiGNO7McNSHTGpwZUSar92o2mnEETnUumS5vZq8HS5DJjI/dR8qTmmFoF6zYbrj1z+vH8bFja7yHV9ZePPDTq0U8u7a1YW7syoIf1fgpEadIuHPgAv2yFcQHM64CguspZQcKthJaNbG1qBXrsBGo8IXl6ZBohXBXzVRiJloLbFXE/9bcqcZ/zRM5WCBUKHgxFHVkOyqdOrRX7T5veEJ/pmqiiE5b9RofNbB1OC+ZN67FuNgOpUoXNShIUoV1mKkL1VYC2MqVdiTbjyvCFJLM6uDQg1JNhzUQ6HspEg9FNJPiaWph2MqHB/WxJbGG2suLVG/bpJ1marB7fHZN9WDqwXhvB011QHt/riRSCscphXW6EZhjJi20ihOX9N+61nFknJaXMN2ou/oDmtTSRNg9N0Ux3UYO2XB6OO8pt+sxdCJB0YjN9Lojup58fUJRuJARPWsogAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAg4S+BYpUu1gsZjQAAAABJRU5ErkJggg==" alt="">            
+          </div>
+          
+
+          </div>
+          <div class="containorWishlistItemRow w-full p-4 jutify-content-center align-items-center" ng-style="{'display': openWishlist ? 'flex' : 'none'}">
+            <h2 class="text-white mt-3 mx-3">Wishlist</h2>
+                                                  <div id="containorShows" class="containorShows w-full p-3">
+                                                    <div
+                                                      class="containorPoster max-height-poster"
+                                                      ng-repeat="element in wishlistData"
+                                                      ng-click="clickedChangeBanner(element.original_title, element.overview, element.id)"
+                                                    >
+                                                            <img ng-src="{{posterPath + element.poster_path}}" alt="" />
+                                                     </div>
+                                                  <!-- Images will be dynamically injected  -->
+                                                  
+                                                    <!-- <div
+                                                      class="containorPoster max-height-poster"
+                                                      ng-repeat="element in data"
+                                                      ng-click="clickedChangeBanner(element.original_title, element.overview)"
+                                                    >
+                                                      <img src="{{posterPath + element.poster_path}}" alt="" />
+                                                    </div> -->
+                                                  </div>
+                                                   
+        
+          </div>
         </div>
       </div>
       <div
@@ -139,7 +187,7 @@
           ng-repeat="element in data"
           ng-click="clickedChangeBanner(element.original_title, element.overview, element.id)"
         >
-          <img ng-src="{{posterPath + element.poster_path}}" alt="" />
+          <img ng-src="{{posterPath + element.poster_path}}" ng-hover="sampleFunctionHover()" alt="" />
         </div>
         <!-- Images will be dynamically injected  -->
         <div id="containorShows" class="containorShows w-full p-3">
@@ -177,15 +225,17 @@
             class="iconClicked fa-sharp fa-solid fa-circle-xmark"
             ng-click="closeContainor()"
           ></i>
-          <iframe
-            id="iframe"
-            width="660"
-            height="415"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+          <div class="containorIframe w-50 min-height-iframe px-4 d-flex flex-column justify-content-start">
+              <iframe
+              id="iframe"
+              class="w-full iframe"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+
+          </div>
 
           <div
             class="containorInformation p-5 d-flex flex-column justify-content-start w-50"
@@ -196,6 +246,12 @@
             <p id="cardMovieContent" class="text-white px-3">
               {{videoOverview}}
             </p>
+            
+            <div class="containorButtons w-full p-3 d-flex">
+              <button class="w-50 m-2 border border-white rounded-sm py-2 text-white bg-transparent hover:bg-black">View More</button>
+              <button ng-class="classCustom" ng-click="addToWishlist(videoID)">{{wishliastButtonContent}}</button>
+
+            </div>
             <div
               id="containorShowsAction1"
               class="containorShows w-full p-3 mb-1"
@@ -215,8 +271,8 @@
         </div>
       </div>
       <div
-      class="containorNetflixOriginals w-full p-3 px-4 mt-lg-5 d-flex flex-column justify-content-around"
-    >
+      class="containorNetflixOriginals w-full p-3 px-4 mt-5 d-flex flex-column justify-content-around"
+      >
       <h2 class="text-white font-weight-bold mt-4">Discover</h2>
       <div id="containorShowsAction" class="containorShows w-full p-3 mb-1">
         <!-- Images will be dynamically injected  -->

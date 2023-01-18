@@ -13,6 +13,10 @@ h3, h2, h1{
 /* .width-all-file{
     width: 1800px;
 } */
+
+.imageAvatar{
+    object-fit: contain;
+}
 .h-101{
     height: 100vh;
     top: 0;
@@ -25,11 +29,14 @@ h3, h2, h1{
     background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.61),#111);
     
 }
+.containorFormEdit{
+    display: none;
+}
 .border-right{
     border-right: 20px solid white;
 }
 .containorPasswordValidationBlock{
-    transition: 2s ease;
+    transition: 0.5s ease;
 }
 .bg-black 
 {

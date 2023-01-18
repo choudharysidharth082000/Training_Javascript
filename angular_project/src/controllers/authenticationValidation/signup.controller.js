@@ -1,15 +1,20 @@
 ///<reference path="../../../app.js" />
 
-
-
 //creating the controller for handling the signup validations
 const validationController = myapp.controller(
   "controllerValidate",
   function ($scope, $location, serviceValidation, $rootScope, signupService) {
+    //checking if the users field int eh localstorage is empty
+    if (localStorage.getItem("users") == null) {
+      localStorage.setItem("users", JSON.stringify([]));
+    }
+
     //protected route checking if the istoken is true
-    if (localStorage.getItem("isToken") == "true") {
+    if (localStorage.getItem("isLoggedIn") == "true") {
       $location.path("/dashboard");
     }
+
+    $rootScope.sampleMessage = "Hello world root";
     //color
     $scope.color = "#E50914";
     //models for the input
@@ -90,6 +95,7 @@ const validationController = myapp.controller(
           password: $scope.password,
           username: $scope.username,
           phone: $scope.phone,
+          wishlist: []
         };
         const response = signupService.signup(user);
         console.log(response);

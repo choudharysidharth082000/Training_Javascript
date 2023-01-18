@@ -19,7 +19,7 @@ const serviceLogin = myapp.factory("loginService", function ($rootScope) {
     if (checkUser.length > 0) {
       console.log(checkUser);
       $rootScope.user = checkUser[0];
-      localStorage.setItem("isToken", true);
+      localStorage.setItem("isLoggedIn", true);
       localStorage.setItem("user", JSON.stringify(checkUser[0]));
       return {
         status: true,
@@ -32,7 +32,8 @@ const serviceLogin = myapp.factory("loginService", function ($rootScope) {
   };
   //logout service
   const logout = () => {
-    localStorage.setItem("isToken", false);
+    console.log("button Clicked");
+    localStorage.setItem("isLoggedIn", false);
     $rootScope.user = null;
   };
   return { login, logout };

@@ -2,10 +2,13 @@
 
 myapp.controller(
   "controllerValidateLogin",
-  function ($scope, serviceValidation, loginService, $location) {
-
+  function ($scope, serviceValidation, loginService, $location, $rootScope) {
+    console.log($rootScope.sampleMessage);
+    if (localStorage.getItem("users") == null) {
+      localStorage.setItem("users", JSON.stringify([]));
+    }
     //protected route checking if the istokenp is true
-    if (localStorage.getItem("isToken") == "true") {
+    if (localStorage.getItem("isLoggedIn") == "true") {
         $location.path("/dashboard");
     }
     $scope.emailError = false;

@@ -1,7 +1,7 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
     scroll-behavior: smooth;
-    transition: all 2s ease;
+    transition: all 0.5s ease;
 }
 .containorBackdrop{
     background-size: cover;
@@ -12,10 +12,19 @@
     background-position-y: center;
     object-fit: cover;
 }
+.iframe{
+    height: 500px;
+}
+.min-height-iframe{
+    min-height: 500px;
+}
 .main{
     transition: 1s ease;
 }
 
+.subscription{
+    color: #b8b3b3
+}
 .netflix {
     height: 434.44px;
 }
@@ -55,7 +64,7 @@
     /* transition: -webkit-transform .45s;
     transition: transform .45s;
     transition: transform .45s,-webkit-transform .45s; */
-    transition: 1s ease;
+    transition: 0.5s ease;
 }
 .containorPoster img{
     width: 200px;
@@ -71,9 +80,10 @@
 }
 
 .sidebar{
+    z-index: 999999;
     position: fixed;
     width: 600px;
-    height: 100vh;
+    height: 120vh;
     display: none;
     background-color: black;
     right: 0;
